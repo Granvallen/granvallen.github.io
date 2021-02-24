@@ -32,7 +32,7 @@
                 // get padding of code div
                 var codePaddings = $code.width() - $code.innerWidth();
                 // code block div width with padding - gutter div with padding + code div padding
-                var width = $(this).outerWidth() - $gutter.outerWidth();
+                var width = $(this).outerWidth() - $gutter.outerWidth() + codePaddings;
                 // apply new width
                 $code.css('width', width);
                 $code.children('pre').css('width', width);
