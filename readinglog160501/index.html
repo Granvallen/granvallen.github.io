@@ -23,7 +23,51 @@
 <audio src="https://raw.githubusercontent.com/Granvallen/granvallen.github.io/master/music/2074227_1529581769033.mp3" controls="controls"></audio>
 
 
+    <div id="cplayer-15343096"></div>
+    <script>
+      (function(){
+        function loadcplayer() {
+          if (typeof window.cplayerList === 'undefined') window.cplayerList = {};
+          if (typeof window.cplayerList["cplayer-15343096"] !== 'undefined') return;
+          if (!cplayer.prototype.add163) cplayer.prototype.add163 = function add163(id) {
+            if (!id) throw new Error("Unable Property.");
+            return fetch("https://music.huaji8.top/?id=" + id).then(function(res){return res.json()}).then(function(data){
+              let obj = {
+                name: data.info.songs[0].name,
+                artist: data.info.songs[0].ar.map(function(ar){ return ar.name }).join(','),
+                poster: data.pic.url,
+                lyric: data.lyric.lyric,
+                sublyric: data.lyric.tlyric,
+                src: data.url.url
+              }
+              this.add(obj);
+              return obj;
+            }.bind(this))
+          }
 
+          window.cplayerList["cplayer-15343096"] = new cplayer({
+            element: document.getElementById("cplayer-15343096"),
+            playlist: [{"name":"6番目の駅","artist":"久石让","src":"https://raw.githubusercontent.com/Granvallen/granvallen.github.io/master/music/2074227_1529581769033.mp3"}],
+            generateBeforeElement: true,
+            deleteElementAfterGenerate: true,
+            autoplay: false
+          });
+
+          window.cplayerList["cplayer-15343096"].add163(443842)
+        }
+        
+        if (typeof window.cplayer === 'undefined' && !document.getElementById("cplayer-script")) {
+          var js = document.createElement("script");
+          js.src = 'https://cdn.jsdelivr.net/gh/MoePlayer/cPlayer/dist/cplayer.js';
+          js.id = "cplayer-script";
+          js.addEventListener("load", loadcplayer);
+          document.body.appendChild(js);
+        } else {
+          window.addEventListener("load", loadcplayer);
+        }
+      })()
+    </script>
+	
 <p>关于久石让，从他的音乐谈起吧。小时候第一次接触久石让的曲子，恐怕都是在《天空之城》、《龙猫》等吉卜力的动画电影里，吉卜力成就了早期的久石让。那时还没有一个动画电影概念，它是集很多人的心血制作而成的，有导演、画师、配乐、声优等，即便如此，我们还是对一些电影中的旋律感到痴迷，把片名作为了那些耳熟能详旋律的名字。我想直到现在，没去仔细了解过的朋友应该还会把那首《君をのせて》（《载着你走》）说成《天空之城》，它也曾被改成各种版本，都足以说明曲子与电影的影响力。久石让的曲子单独拿出来听，足以触及心底最柔软的部分，而放在电影里，又能与电影表达的主题契合，实属难得。</p>
 <p>《感动，如此创造》原来是久石让的第三本书，是自传性质的作品。与众不同的是，这是久石让首次以文字的形式记录他对音乐创作的见解。说真的，在读之前，对久石让的印象也还停留在动画电影配乐的阶段。从他的音乐中，想象创作者是怎样一个人。作品的大部分内容都在谈论音乐创作，如音乐人如何保持感性与敏锐的直觉，捕获灵感，学音乐的可能会更有感触收获更丰。话虽如此，在一些工作生活的共性方面，久石让的见解还是有一定的启发性的。</p>
 <h3>创作者的态度</h3>
