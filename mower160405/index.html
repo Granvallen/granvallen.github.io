@@ -10,52 +10,6 @@
 <span id="more"></span>
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=38358664&auto=0&height=66"></iframe>
 
-
-    <div id="cplayer-87129786"></div>
-    <script>
-      (function(){
-        function loadcplayer() {
-          if (typeof window.cplayerList === 'undefined') window.cplayerList = {};
-          if (typeof window.cplayerList["cplayer-87129786"] !== 'undefined') return;
-          if (!cplayer.prototype.add163) cplayer.prototype.add163 = function add163(id) {
-            if (!id) throw new Error("Unable Property.");
-            return fetch("https://music.huaji8.top/?id=" + id).then(function(res){return res.json()}).then(function(data){
-              let obj = {
-                name: data.info.songs[0].name,
-                artist: data.info.songs[0].ar.map(function(ar){ return ar.name }).join(','),
-                poster: data.pic.url,
-                lyric: data.lyric.lyric,
-                sublyric: data.lyric.tlyric,
-                src: data.url.url
-              }
-              this.add(obj);
-              return obj;
-            }.bind(this))
-          }
-
-          window.cplayerList["cplayer-87129786"] = new cplayer({
-            element: document.getElementById("cplayer-87129786"),
-            playlist: [],
-            generateBeforeElement: true,
-            deleteElementAfterGenerate: true,
-            autoplay: false
-          });
-
-          window.cplayerList["cplayer-87129786"].add163(38358664),window.cplayerList["cplayer-87129786"].add163(27955597)
-        }
-        
-        if (typeof window.cplayer === 'undefined' && !document.getElementById("cplayer-script")) {
-          var js = document.createElement("script");
-          js.src = 'https://cdn.jsdelivr.net/gh/MoePlayer/cPlayer/dist/cplayer.js';
-          js.id = "cplayer-script";
-          js.addEventListener("load", loadcplayer);
-          document.body.appendChild(js);
-        } else {
-          window.addEventListener("load", loadcplayer);
-        }
-      })()
-    </script>
-	
 <p>最近天气渐渐转暖，北方的春天，一些行道树还光秃秃地没有抽芽呢。</p>
 <p>最近也逐渐习惯晚上到操场跑几圈，天气好抬头也能看到不少星星嘛。</p>
 <p>稍稍回顾了下这四个星期，翻看我的记事本大概写了六篇小记，主要还是自我探索方面的，简单谈谈一些内容和想法吧。</p>
