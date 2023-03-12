@@ -1,0 +1,147 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title>关于采样的总结 | Granvallen;Nest</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/7.0.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"><meta name="generator" content="Hexo 5.4.2"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">关于采样的总结</h1><a id="logo" href="/.">Granvallen;Nest</a><p class="description">人生苦短</p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/guestbook/"><i class="fa fa-comments"> 留言本</i></a><a href="/about/"><i class="fa fa-terminal"> 关于</i></a><a href="/atom.xml"><i class="fa fa-rss"> 订阅</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-4-4"><div class="content_container"><div class="post"><h1 class="post-title">关于采样的总结</h1><div class="post-meta">Feb 15, 2018<span> | </span><span class="category"><a href="/categories/Lab/">Lab</a><a href="/categories/Lab/%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/">信号处理</a><a href="/categories/Lab/%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/DSP/">DSP</a></span><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script><span id="busuanzi_container_page_pv"> | <span id="busuanzi_value_page_pv"></span><span> 阅读</span></span></div><div class="clear"><div class="toc-article" id="toc"><div class="toc-title">文章目录</div><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BF%9E%E7%BB%AD%E6%97%B6%E9%97%B4%E4%BF%A1%E5%8F%B7%E9%87%87%E6%A0%B7"><span class="toc-number">1.</span> <span class="toc-text">连续时间信号采样</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%A6%BB%E6%95%A3%E6%97%B6%E9%97%B4%E4%BF%A1%E5%8F%B7%E9%87%87%E6%A0%B7"><span class="toc-number">2.</span> <span class="toc-text">离散时间信号采样</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%A6%BB%E6%95%A3%E6%97%B6%E9%97%B4%E4%BF%A1%E5%8F%B7%E6%8A%BD%E5%8F%96%E4%B8%8E%E5%86%85%E6%8F%92"><span class="toc-number">3.</span> <span class="toc-text">离散时间信号抽取与内插</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%A9%E7%94%A8%E7%A6%BB%E6%95%A3%E6%97%B6%E9%97%B4%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E5%AE%9E%E7%8E%B0%E9%87%8D%E9%87%87%E6%A0%B7"><span class="toc-number">4.</span> <span class="toc-text">利用离散时间信号处理实现重采样</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E4%B8%AA%E8%A1%A5%E5%85%85"><span class="toc-number">4.1.</span> <span class="toc-text">一个补充</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B0%8F%E7%BB%93"><span class="toc-number">5.</span> <span class="toc-text">小结</span></a></li></ol></div></div><div class="post-content"><p>最近又在复习信号处理的东西，对于一些内容有了更深入的理解，于是做一个关于采样的总结。众所周知，自然界大多数信号是模拟信号，采样是数字系统处理的第一步，主要由各种传感器配合A/D来实现。在<a href="https://granvallen.github.io/fft/">FFT为什么那么快</a>一文中提到了“重采样”的概念，在那里一笔带过了，本文也算是一个补充。</p>
+<span id="more"></span>
+<p>既然是内容的梳理必然会牵涉到很多细节，其中包括数学公式的推导，这些在奥本海姆教授的两本著作<a target="_blank" rel="noopener" href="https://book.douban.com/subject/21359219/">《信号与系统》</a>和<a target="_blank" rel="noopener" href="https://book.douban.com/subject/26307919/">《离散时间信号处理》</a>都有详细推导过程。本文的主要内容可以在《信号与系统》的第七章与《离散时间信号处理》的第四章中找到参考，以下简写为《信-奥》与《离-奥》，区别于参考郑君里教授的同名著作，将简写作《信-郑》。由于这部分采样内容在两本书中分布广泛、符号定义存在差异以及公式推导方式不一，因此做一个总结是有必要的。本文的一些内容会基于自己的理解，可能错误在所难免，不过书写是为了更好地理解。</p>
+<p>在阅读这两本书的过程中，令我十分敬佩的是作者清晰的写作思路。如果把阅读一本书比作一次冒险旅行，那么在旅途中作者不断地提醒你：你现在身处何处？曾走过了哪些景点？经历了哪些岔路？我们这段路地主要景点是什么？我们旅行最终目的地又在何方？具体到某一知识点就是：这个问题是怎么引入的？为什么要研究这个问题？这个问题在整个知识框架下是什么样的地位？搞清楚了这些再讲：问题如何解决？解决方法怎么来的？为什么这么解决，有什么好处？这个问题的解决会引入什么新问题？作者不厌其繁地讲这些也许会被一些人贴上“死于话多”的标签，但我想对于初学者来说这总是好的，国外的教材大抵有这样的特点。</p>
+<p>扯远了，这里也先给出本文的思路。先梳理采样基础的内容，包括对连续时间信号的采样和对离散时间信号（序列）的采样过程，主要注意采样过程数学模型的建立。接着由对离散时间信号的采样引出离散时间信号处理的两个操作—-抽取与内插，再引出这两个操作的应用，即实现重采样。</p>
+<hr>
+<h1 id="连续时间信号采样"><a href="#连续时间信号采样" class="headerlink" title="连续时间信号采样"></a>连续时间信号采样</h1><p>采样过程主要关注采样过程的数学表述以及采样过程在时域与频域的变化，这部分内容可参考《信-郑》P.156或《信-奥》P.109。</p>
+<p>讨论连续时间采样时，我们总是采用“理想采样过程”的叙述，即是说采用周期冲激串来简化模拟采样过程，这意味着将忽略单次采样的时间，或者认为ADC的转化过程是瞬间完成的，这在数学上是一种简化。</p>
+<p>周期为T的采样周期冲激串表达式为：</p>
+<script type="math/tex; mode=display">P(t)=\sum^{\infty}_{n=-\infty}\delta(t-nT)</script><p>$x_{c}(t)$为被采样信号，$x_{s}(t)$为采样后信号，整个采样过程由被采样信号与采样冲激串相乘来模拟，即：</p>
+<script type="math/tex; mode=display">x_{s}(t)=x_{c}(t)P(t)=\sum^{\infty}_{n=-\infty}x_{c}(t)\delta(t-nT)=\sum^{\infty}_{n=-\infty}x_{c}(nT)\delta(t-nT)</script><p>以上即是理想采样过程的时域表达，频域的分析有两种推导方法，一种是借由傅里叶级数，把冲激串傅里叶级数展开，然后对$x_{c}(t)P(t)$做傅里叶变换；另一种是先利用周期函数傅里叶变换求冲激串的傅里叶变换，然后借助傅里叶变换的相乘性质去求。这里用第一种方法说明。</p>
+<p>将$P(t)$用复指数形式傅里叶级数展开：</p>
+<script type="math/tex; mode=display">P(t)=\sum^{\infty}_{n=-\infty}\delta(t-nT)=\sum^{\infty}_{n=-\infty}a_{n}e^{jn\Omega_{s}t}</script><p>其中$a_{n}$为傅里叶级数系数，而：</p>
+<script type="math/tex; mode=display">\Omega_{s}=\frac{2\pi}{T}=2\pi f_{s}</script><p>$\Omega_{s}$是连续时间的采样角频率，连续时间的角频率用大写的$\Omega$表示，而离散时间归一化后的角频率用小写$\omega$表示。</p>
+<p>下面计算系数$a_{n}$:</p>
+<script type="math/tex; mode=display">
+\begin{align}
+a_{n} &= \frac{1}{T}\int^{T/2}_{-T/2}P(t)e^{-jn\Omega_{s}t}\mathrm{d}t \\ 
+&= \frac{1}{T}\int^{T/2}_{-T/2}\left[\sum^{\infty}_{n=-\infty}\delta(t-nT)\right]e^{-jn\Omega_{s}t}\mathrm{d}t \\ 
+&= \frac{1}{T}\int^{T/2}_{-T/2}\delta(t)e^{-j\cdot 0 \cdot \Omega_{s}t}\mathrm{d}t \\ 
+&= \frac{1}{T}
+\end{align}</script><p>于是计算$x_{s}(t)$的傅里叶变换：</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+X_{s}(j\Omega) = \mathscr{F}\left[x_{s}(t)\right] 
+&= \mathscr{F}\left[x_{c}(t)\cdot P(t)\right] \\
+&= \int^{+\infty}_{-\infty}x_{c}(t)P(t)e^{-j\Omega t}\mathrm{d}t \\
+&= \int^{+\infty}_{-\infty}x_{c}(t) \left[\sum^{\infty}_{n=-\infty}\frac{1}{T}e^{jn\Omega_{s}t}\right]e^{-j\Omega t}\mathrm{d}t \\
+&= \frac{1}{T}\sum^{\infty}_{n=-\infty}\int^{+\infty}_{-\infty}x_{c}(t)e^{-j(\Omega-n\Omega_{s})t}\mathrm{d}t \\
+&= \frac{1}{T}\sum^{\infty}_{n=-\infty}X_{c}(j(\Omega-n\Omega_{s}))
+\end{align*}</script><p>可见采样之后频域变化是把$x_{c}(t)$的频域图像以$\Omega_{s}$进行周期延拓，并且在幅度上乘因子$\frac{1}{T}$。</p>
+<p>最后的说明，在连续时间信号采样的数学表达中最后产生的是一个序列$x[n]$，与$x_{c}(t)$有关系：</p>
+<script type="math/tex; mode=display">x[n]=x_{c}(nT)</script><p>实际上$x[n]$是$x_{s}(t)$把冲激替换为冲激能量的大小数值，并在时间上做归一化处理得到的。这部分的更详细的说明可参考《离-奥》P.109~110</p>
+<p>也就是说整个采样过程应该是这样的：</p>
+<p><img src="https://raw.githubusercontent.com/Granvallen/granvallen.github.io/master/img/sampling.PNG" style="zoom:30%" alt="采样过程" align=center /></p>
+<hr>
+<h1 id="离散时间信号采样"><a href="#离散时间信号采样" class="headerlink" title="离散时间信号采样"></a>离散时间信号采样</h1><p>即对序列的采样过程，参考《信-奥》的7.4节与《离-奥》P.127内容。</p>
+<p>离散时间信号的采样过程的框图应该是这样的：<br><img src="https://raw.githubusercontent.com/Granvallen/granvallen.github.io/master/img/sampling2.PNG" style="zoom:30%" alt="离散时间采样过程" align=center /></p>
+<p>和连续时间采样一样，$x[n]$是待采样的序列，$P[n]$是用于采样的周期脉冲序列，$[n]$是一个周期脉冲序列，周期为N（对应于连续时间的周期冲激串），而$x_{p}$是采样得到的序列，有：</p>
+<script type="math/tex; mode=display">x_{p}[n]=x[n]\cdot P[n]=\sum^{\infty}_{k=-\infty}x[kN]\delta[n-kN]</script><p>另外在时域上n为N的整数倍的点上$x[n]$与$x_{p}[n]$值相同：</p>
+<script type="math/tex; mode=display">x_{p}[nN]=x[nN]</script><p>下面给出频域的分析，由DTFT的相乘性质：</p>
+<script type="math/tex; mode=display">X_{p}(e^{j\omega})=\frac{1}{2\pi}\int_{2\pi}P(e^{j\theta})X(e^{j(\omega-\theta)})\mathrm{d}\theta</script><p>时域乘积频域做周期卷积，这一性质可参考《信-奥》P.247，DTFT的相乘性质。</p>
+<p>我们已知周期脉冲序列$P[n]$的DTFT:</p>
+<script type="math/tex; mode=display">P(e^{j\omega})=\frac{2\pi}{N}\sum^{\infty}_{k=-\infty}\delta(\omega-k\omega_{s}) \quad \quad\quad\omega_{s}=\frac{2\pi}{N}</script><p>上面的公式属于<strong>周期序列的DTFT</strong>，所以引入了冲激函数，这部分可参考《信-奥》P.236与《离-奥》P.443。于是：</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+X_{p}(e^{j\omega}) &= \frac{1}{2\pi}\int_{2\pi}P(e^{j\theta})X(e^{j(\omega-\theta)})\mathrm{d}\theta \\
+&= \frac{1}{2\pi}\int_{2\pi} \left[ \frac{2\pi}{N}\sum^{\infty}_{k=-\infty}\delta(\theta-k\omega_{s})\right]X(e^{j(\omega-\theta)})\mathrm{d}\theta \\
+&= \frac{1}{N}\sum^{\infty}_{k=-\infty}X(e^{j(\omega-k\omega_{s})})\int_{2\pi}\delta(\theta-k\frac{2\pi}{N})\mathrm{d}\theta
+\end{align*}</script><p>这式子稍微有点难理解，这里是无穷项求和，每一项中k是确定的，且都包含后面的积分项，这个积分项先选定$2\pi$长的积分区间，只有当$k\frac{2\pi}{N}$落在这个积分区间内时积分值为1，否则积分值为0。对于$2\pi$长的积分区间最多有N个k值下积分值不为0，至于是哪N个k值关系不大，因为$X(e^{j(\omega-k\omega_{s})})$对k来说是以N为周期的，于是只需取N个连续k值即可，比如从0到N-1，即：</p>
+<script type="math/tex; mode=display">X_{p}(e^{j\omega})=\frac{1}{N}\sum^{N-1}_{k=0}X(e^{j(\omega-k\omega_{s})}) \quad \quad\quad\omega_{s}=\frac{2\pi}{N}</script><p>如果把连续时间采样频域表达式拿过来做个对比：</p>
+<script type="math/tex; mode=display">X_{s}(j\Omega)=\frac{1}{T}\sum^{\infty}_{k=-\infty}X_{c}(j(\Omega-k\Omega_{s}))\quad \quad\quad\Omega_{s}=\frac{2\pi}{T}</script><p>就会发现两式形式差别不大，采样过程在频域都是对原信号频谱做周期搬移。而且离散采样得到的就是序列，不用像连续时间采样那样需要最后转换为离散序列。</p>
+<hr>
+<h1 id="离散时间信号抽取与内插"><a href="#离散时间信号抽取与内插" class="headerlink" title="离散时间信号抽取与内插"></a>离散时间信号抽取与内插</h1><p>在前一小节中得到的序列$x_{p}[n]$可以这样描述：<strong>在n为N的整数倍的点上的值与$x[n]$相同，其他n值点都是0</strong>，为了节省存储空间，需要对$x_{p}[n]$进行压缩，这里所进行的操作就是“抽取”，而其逆过程则称为“内插”。</p>
+<p>同样要弄清楚做这两种处理时域与频域的变化及混叠情况，这部分参考《信-奥》P.353与《离-奥》P.127。</p>
+<p>设对$x_{p}[n]$抽取后得到的序列为$x_{b}[n]$，于是在时域上有$x_{b}[n]=x_{p}[nN]$（$x_{b}[n]$直接由$x_{p}[n]$N整数倍的点组成），又因为之前有$x_{p}[nN]=x[nN]$，故：</p>
+<script type="math/tex; mode=display">x_{b}[n]=x[nN]=x_{p}[nN]</script><p>然后寻找$x_{b}[n]$、$x_{p}[n]$与$x[n]$频域(DTFT)之间的关系，推导过程可参考《信-奥》P.353~354。</p>
+<p>首先$x_{b}[n]$的DTFT为：</p>
+<script type="math/tex; mode=display">X_{b}(e^{j\omega})=\sum^{\infty}_{k=-\infty}x_{b}[k]e^{-j\omega k}</script><p>再利用$x_{b}[n]$与$x_{p}[n]$的关系：</p>
+<script type="math/tex; mode=display">X_{b}(e^{j\omega})=\sum^{\infty}_{k=-\infty}x_{p}[kN]e^{-j\omega k}</script><p>做变量替换$n=kN$有$k=\frac{n}{N}$，于是：</p>
+<script type="math/tex; mode=display">X_{b}(e^{j\omega})=\sum_{n=N \text{的整数倍}}x_{p}[n]e^{-j\omega \frac{n}{N}}</script><p>因为n不为N的整数倍时$x_{p}[n]=0$,故可写为：</p>
+<script type="math/tex; mode=display">X_{b}(e^{j\omega})=\sum^{\infty}_{n=-\infty}x_{p}[n]e^{-j\omega \frac{n}{N}}</script><p>把右边$\frac{n}{N}$看作整体，右边即对$x_{p}[n]$的DTFT，即：</p>
+<script type="math/tex; mode=display">X_{p}(e^{j\frac{\omega}{N}})=\sum^{\infty}_{n=-\infty}x_{p}[n]e^{-j\omega \frac{n}{N}}</script><p>联立得到：</p>
+<script type="math/tex; mode=display">X_{b}(e^{j\omega})=X_{p}(e^{j\frac{\omega}{N}})</script><p>之前由对序列采样，我们已经得到了$x_{p}[n]$与$x[n]$的关系，如下：</p>
+<script type="math/tex; mode=display">X_{p}(e^{j\omega})=\frac{1}{N}\sum^{N-1}_{k=0}X(e^{j(\omega-k\omega_{s})}) \quad \quad\quad\omega_{s}=\frac{2\pi}{N}</script><p>至此就得到了这三个序列的频域联系，可见抽取将导致频域扩展。如果再把上面两式联立得到：</p>
+<script type="math/tex; mode=display">X_{b}(e^{j\omega})=\frac{1}{N}\sum^{N-1}_{k=0}X(e^{j(\frac{\omega}{N}-k\omega_{s})}) \quad \quad\quad\omega_{s}=\frac{2\pi}{N}</script><p>上式后面会看到实际上就是采样率以N倍减小时得到的序列与原采样率下得到序列的频域关系。</p>
+<p>下面是抽取在频域变化的例子：<br><img src="https://raw.githubusercontent.com/Granvallen/granvallen.github.io/master/img/sampling4.PNG" style="zoom:50%" alt="抽取频域变化" align=center /></p>
+<p>下面是内插的说明，内插是抽取的逆过程，可以猜想频域变化为收缩。参考《离-奥》P.131。</p>
+<p>这里依旧设原序列为$x[n]$，内插后序列为$x_{e}[n]$，假设两者时域关系为：</p>
+<script type="math/tex; mode=display">
+x_{e}[n]= 
+\begin{cases} 
+x[\frac{n}{L}] & n=0,\pm L,\pm 2L,\dots\\ 
+0 & \text{others}.\\ 
+\end{cases}</script><p>上式即以L为间隔的内插，实际上就是在序列$x[n]$每两个值之间插入$(L-1)$个零值。上式的一种等效写法为：</p>
+<script type="math/tex; mode=display">x_{e}[n]=\sum^{\infty}_{k=-\infty}x[k]\delta[n-kL]</script><p>这个式子可以这样理解：$x_{e}[n]$由无穷项相加构成，只有当$n=kL$时，那一项才不为0，而是$x[\frac{n}{L}]$，与之前的公式描述相同。</p>
+<p>对$x_{e}[n]$做DTFT：</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+X_{e}(e^{j\omega})
+&= \sum^{\infty}_{n=-\infty} \left( \sum^{\infty}_{k=-\infty}x[k]\delta[n-kL]\right)e^{-j\omega n} \\
+&= \sum^{\infty}_{k=-\infty}x[k] \left(\sum^{\infty}_{n=-\infty} \delta[n-kL]e^{-j\omega n} \right)\\
+&= \sum^{\infty}_{k=-\infty}x[k] e^{-j\omega Lk} \\
+&= X(e^{-j\omega L}) 
+\end{align*}</script><p>由此便得到了$x_{e}[n]$与$x[n]$在频域的关系式。<br>上式推导过程中用到了：</p>
+<script type="math/tex; mode=display">\sum^{\infty}_{n=-\infty} \delta[n-kL]e^{-j\omega n}=e^{-j\omega Lk}</script><p>以上讨论了抽取与内插过程，最后实现抽取的系统称为压缩器，而实现内插的系统称为扩展器。</p>
+<hr>
+<h1 id="利用离散时间信号处理实现重采样"><a href="#利用离散时间信号处理实现重采样" class="headerlink" title="利用离散时间信号处理实现重采样"></a>利用离散时间信号处理实现重采样</h1><p>这个问题可以看作是之前讨论的抽取与内插的应用，说的是运用这两种技术实现对原连续时间信号的采样率，称之为重采样。需要注意的是<strong>改变的是对连续时间信号采样率</strong>。这其中涉及用抽取实现的减采样与用内插实现的增采样两部分。</p>
+<p>之前讨论过对连续信号$x_{c}(t)$以<strong>周期T</strong>采样最终将得到序列$x[n]$，他们之间的关系为：</p>
+<script type="math/tex; mode=display">x[n]=x_{c}(nT)</script><p>所谓“改变采样率”就是说换成<strong>周期为$T_{1}$</strong>去采样，这样势必会得到一个新的采样序列记为$x_{1}[n]$，有：</p>
+<script type="math/tex; mode=display">x_{1}[n]=x_{c}(nT_{1})</script><p>现在的问题是$x_{c}[n]$是未知的，$x[n]$已知，而去求另一个采样率下对$x_{c}(t)$采样得到的序列$x_{1}[n]$，解决问题的办法通常有两种，一是先由$x[n]$重构出$x_{c}(t)$，再调整以周期$T_{1}$重新进行采样得到$x_{1}[n]$，另一种方法则通过$x[n]$与$x_{1}[n]$的关系，用离散时间信号处理的方式求得$x_{1}[n]$，这是这里得重点。</p>
+<p>下面先讨论减采样。我们的目的还是推导出原采样率下得到的序列与降低采样率后采样得到的序列频域上的关系。</p>
+<p>在降低采样率的情况下，讨论重新设定采样率为原采样率$\frac{1}{M}$的这种情况。比如新采样周期$T_{d}$是原周期T的M倍：</p>
+<script type="math/tex; mode=display">T_{d}=MT</script><p>重采样得到的序列记作$x_{d}[n]$，有：</p>
+<script type="math/tex; mode=display">x_{d}[n]=x_{c}(nT_{d})=x_{c}(nMT)</script><p>利用$x[n]=x_{c}(nT)$，于是找到两采样序列之间的关系：</p>
+<script type="math/tex; mode=display">x_{d}[n]=x[nM]</script><p>这个时域关系之前刚讨论过，$x_{d}[n]$就是$x[n]$以M抽取得到的，两者频域关系的表达式在抽取那里已经给出，这里以M抽取，故：</p>
+<script type="math/tex; mode=display">X_{d}(e^{j\omega})=\frac{1}{M}\sum^{M-1}_{k=0}X(e^{j(\frac{\omega}{M}-k\frac{2\pi}{M})})</script><p>此式完整的推导过程可参考《离-奥》P.128。</p>
+<hr>
+<h2 id="一个补充"><a href="#一个补充" class="headerlink" title="一个补充"></a>一个补充</h2><p>这里有一个之前一直没想通的地方，就是之前讨论是这样一个过程：<br><strong>$x[n]$是以周期为T对$x_{c}(t)$采样得到的，然后是序列的采样过程，假设采样周期为$N_{1}$，得到$X_{p}[n]$。最后对$x_{p}[n]$以比如$N_{2}$抽取，得$x_{b}[n]$</strong>，故这些序列在在频域得关系为：</p>
+<script type="math/tex; mode=display">X_{p}(e^{j\frac{\omega}{N_{1}}})=\sum^{\infty}_{n=-\infty}x_{p}[n]e^{-j\omega \frac{n}{N_{1}}}</script><script type="math/tex; mode=display">X_{b}(e^{j\omega})=X_{p}(e^{j\frac{\omega}{N_{2}}})</script><p>联立得：</p>
+<script type="math/tex; mode=display">X_{b}(e^{j\omega})=\frac{1}{N_{1}}\sum^{N_{1}-1}_{k=0}X(e^{j(\frac{\omega}{N_{2}}-k\frac{2\pi}{N_{1}})})</script><p>这与前面$X_{d}(e^{j\omega})$对比，会发现如果有$N_{1}=N_{2}=M$时，两者完全相等。这个等式成立是合理的，事实上在推导的时候也是默认成立的，不然就失去了意义。</p>
+<p>另一点要注意的是对$x[n]$以N抽取与对$x_{p}[n]$以N抽取得到的序列相同，都是$x_{b}[n]$，因为抽取操作只关心n为N整数倍的那些点。</p>
+<p>以上所有讨论的序列关系如下图：</p>
+<p><img src="https://raw.githubusercontent.com/Granvallen/granvallen.github.io/master/img/sampling5.PNG" style="zoom:30%" alt="序列关系" align=center /></p>
+<hr>
+<p>接下来是减采样系统的构成：</p>
+<p><img src="https://raw.githubusercontent.com/Granvallen/granvallen.github.io/master/img/sampling6.PNG" style="zoom:30%" alt="减采样系统" align=center /></p>
+<p>可见系统除了一个实现抽取操作的压缩器外还有个抗混叠滤波器，这个滤波器的主要作用是把$x[n]$的频域截断到$\frac{\pi}{M}$，因为进行以M为周期的抽取等效于对频域扩展M倍，要不发生混叠，压缩器输入信号带宽最大就是$\frac{\pi}{M}$。</p>
+<p>同样对于增采样过程，若以L倍增加采样率，实际上可以通过对$x[n]$以L内插得到采样序列$x_{e}[n]$。之前得到他们在频域上：</p>
+<script type="math/tex; mode=display">X_{e}(e^{j\omega})=X(e^{j\omega L})</script><p>而增采样系统一般为：<br><img src="https://raw.githubusercontent.com/Granvallen/granvallen.github.io/master/img/sampling7.PNG" style="zoom:23%" alt="减采样系统" align=center /></p>
+<p>可以看到除了一个实现内插的扩展器外还有一个低通滤波器，这个低通滤波器是必须的。</p>
+<p>一方面，增益为L进行幅度调整，对于以周期为T进行采样得到的序列$x[n]$，在频域幅度是被采样信号的$\frac{1}{T}$，故若将将采样周期改变为$\frac{T}{L}$，应把幅度也调整为$\frac{L}{T}$，而之前减采样过程的频域表达式中本身就会乘以因子$\frac{1}{M}$，将$\frac{1}{T}$调整为$\frac{1}{MT}$，因此不需要滤波器再对幅度进行调整。</p>
+<p>另一方面经过$\frac{\pi}{L}$的低通滤波器后，能滤除频谱多余部分，使剩下来的部分以$2\pi$为周期。</p>
+<hr>
+<h1 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h1><p>本文首先回顾了连续时间信号的采样过程与数学表达，然后将采样的概念引到序列处理，讨论了序列采样过程。由于离散时间信号存取与处理特点，引出序列的抽取与插值操作，最后讨论利用抽取与插值实现改变采样率这一应用。</p>
+<p>这里所讨论的采样都是时域的采样，实际上在采样这块另一个重要的内容是对傅里叶变换的采样（频域的采样），特别在离散时间信号处理中对DTFT、DFT的采样，这些内容对于理解另一类按频率抽取的FFT算法是必要的。<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>終わり</p>
+</div><div class="tags"><a href="/tags/DFT/">DFT</a><a href="/tags/FFT/">FFT</a></div><div class="post-nav"><a class="pre" href="/matlabexcel/">用Matlab处理Excel</a><a class="next" href="/latextikz/">如何使用LaTeX绘图</a></div><div id="container"></div><link rel="stylesheet" href="//unpkg.com/gitalk/dist/gitalk.css"><script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script><script>var gitalk = new Gitalk({
+clientID: 'e5d91200660f217a370f',
+clientSecret: 'c93b4537f4e131796aeba8fdd8f111a38451f12a',
+repo: 'granvallen.github.io',
+owner: 'Granvallen',
+admin: 'Granvallen',
+id: location.pathname,      // Ensure uniqueness and length less than 50
+distractionFreeMode: false,  // Facebook-like distraction free mode
+language: 'zh-CN',
+distractionFreeMode: true
+})
+
+gitalk.render('container')
+
+</script></div></div></div><div class="pure-u-1 pure-u-md-4-4"><div id="footer">Copyright © 2023 <a href="/." rel="nofollow">Granvallen.</a> <br /> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a> Theme by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/3.2.5/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/3.2.5/jquery.fancybox.min.css"><script type="text/javascript" src="/js/search.js?v=0.0.0"></script><script>var search_path = 'search.xml';
+if (search_path.length == 0) {
+   search_path = 'search.xml';
+}
+var path = '/' + search_path;
+searchFunc(path, 'local-search-input', 'local-search-result');
+</script><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = 'https://hm.baidu.com/hm.js?' + 'bf1ecb4728a04112cb191bc2e62aa815';
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+  })();
+</script><script type="text/x-mathjax-config">MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+  });
+</script><script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML" async></script><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>

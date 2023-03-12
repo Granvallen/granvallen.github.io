@@ -1,0 +1,118 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title>Altium Designer画电路板初体验 | Granvallen;Nest</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/7.0.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"><meta name="generator" content="Hexo 5.4.2"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">Altium Designer画电路板初体验</h1><a id="logo" href="/.">Granvallen;Nest</a><p class="description">人生苦短</p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/guestbook/"><i class="fa fa-comments"> 留言本</i></a><a href="/about/"><i class="fa fa-terminal"> 关于</i></a><a href="/atom.xml"><i class="fa fa-rss"> 订阅</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-4-4"><div class="content_container"><div class="post"><h1 class="post-title">Altium Designer画电路板初体验</h1><div class="post-meta">Feb 9, 2016<span> | </span><span class="category"><a href="/categories/Lab/">Lab</a><a href="/categories/Lab/%E7%94%B5%E5%AD%90%E5%B7%A5%E5%AD%A6/">电子工学</a><a href="/categories/Lab/%E7%94%B5%E5%AD%90%E5%B7%A5%E5%AD%A6/EDA/">EDA</a></span><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script><span id="busuanzi_container_page_pv"> | <span id="busuanzi_value_page_pv"></span><span> 阅读</span></span></div><div class="clear"><div class="toc-article" id="toc"><div class="toc-title">文章目录</div><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Altium-Designer%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.</span> <span class="toc-text">Altium Designer简单介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%98%E5%88%B6%E4%B9%8B%E5%89%8D"><span class="toc-number">2.</span> <span class="toc-text">绘制之前</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%94%BB%E5%8E%9F%E7%90%86%E5%9B%BE%E4%B9%8B%E5%89%8D%E7%9A%84%E5%87%86%E5%A4%87%EF%BC%8C%E5%BB%BA%E7%AB%8B%E8%87%AA%E5%B7%B1%E7%9A%84%E9%9B%86%E6%88%90%E5%BA%93"><span class="toc-number">3.</span> <span class="toc-text">画原理图之前的准备，建立自己的集成库</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B5%B7%E6%AD%A5%E8%BF%98%E6%98%AF%E6%96%B0%E5%BB%BA%E5%B7%A5%E7%A8%8B"><span class="toc-number">3.1.</span> <span class="toc-text">起步还是新建工程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E5%85%83%E4%BB%B6"><span class="toc-number">3.2.</span> <span class="toc-text">添加元件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%9E%E6%8E%A5%E5%BA%93"><span class="toc-number">3.3.</span> <span class="toc-text">连接库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BC%96%E8%AF%91%E6%88%90%E9%9B%86%E6%88%90%E5%BA%93"><span class="toc-number">3.4.</span> <span class="toc-text">编译成集成库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%A5%E5%85%85%E9%83%A8%E5%88%86-3D%E5%B0%81%E8%A3%85"><span class="toc-number">3.5.</span> <span class="toc-text">补充部分-3D封装</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8E%9F%E7%90%86%E5%9B%BE%E5%8F%8APCB%E8%AE%BE%E8%AE%A1"><span class="toc-number">4.</span> <span class="toc-text">原理图及PCB设计</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8E%9F%E7%90%86%E5%9B%BE%E7%BB%98%E5%88%B6"><span class="toc-number">4.1.</span> <span class="toc-text">原理图绘制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PCB%E4%B8%8E%E6%94%BE%E7%BD%AEplay"><span class="toc-number">4.2.</span> <span class="toc-text">PCB与放置play</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%83%E7%BA%BF%E4%B8%8E%E6%95%B7%E9%93%9C"><span class="toc-number">4.3.</span> <span class="toc-text">布线与敷铜</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BF%AE%E9%A5%B0%E4%B8%8E%E5%AF%BC%E5%87%BA"><span class="toc-number">5.</span> <span class="toc-text">修饰与导出</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%82%E8%80%83"><span class="toc-number">6.</span> <span class="toc-text">参考</span></a></li></ol></div></div><div class="post-content"><p><img src="https://raw.githubusercontent.com/Granvallen/granvallen.github.io/master/img/Altium%20Designer%E5%90%AF%E5%8A%A8.jpg" style="zoom:40%" alt="" /></p>
+<p>第一次尝试使用Altium Designer画pcb电路图（算作一个插曲），在经过一些尝试后把简单的使用方法及体验做下笔记。</p>
+<span id="more"></span>
+<p>写完了再来写几句，虽然学会了简单绘制，但还是有很多内容不甚了解，まだまだです。文章很长临时增加了个目录。有些内容自己探索，如发现错误持续更新。0(:3　)～ =͟͟͞͞(‘､3)_ヽ)＿</p>
+<h1 id="Altium-Designer简单介绍"><a href="#Altium-Designer简单介绍" class="headerlink" title="Altium Designer简单介绍"></a>Altium Designer简单介绍</h1><p>已经不记得是什么时候知道的这个软件，但是在一些pcb设计者眼中神器一般的存在吧。在以前一直用Multisim画电路图的本渣渣，在打开这个软件后完全不知道干什么，没有元件，没有导线，只好从零一步步尝试。<br>Altium Designer是Altium公司推出的win平台上的一款一体化的电子产品开发系统（亲测在最新的win10系统上兼容性良好，就是这软件在高分屏表现略尴尬，后面会说明），其前身是Protel， Altium Designer 在继承先前Protel软件功能的基础上，综合了FPGA设计和嵌入式系统软件设计功能。AD是电路设计自动化技术 EDA的代表，融合原理图设计、电路仿真、PCB绘制编辑、拓扑逻辑自动布线等技术。编辑完成可以把工程或生成的gerber文件发至工厂生产制造。<br>AD功能强大，但前期很多功能还用不上，先熟悉学会一些简单操作和绘制有利于以后的学习。这次的目标就定为绘制51最小系统的pcb及原理图。</p>
+<h1 id="绘制之前"><a href="#绘制之前" class="headerlink" title="绘制之前"></a>绘制之前</h1><p>AD绘制电路图与另一个我接触过的另一个电路仿真软件protues有点类似，需要自己去设定甚至绘制一些元件。<br>AD制图的一种流程（我见过的）是先绘制原理图库（schematic library），再绘制封装库（pcb library），使用model manager使原理图库与封装库建立对应联系，并合成一个集成库（Integrated Library）。当然除原理图库与封装库外，还可以有一个3D库，包含在封装库中，给元件增加3D封装，在放置元件时能通过3D视角观察，更加直观。但3D封装是可选的，就我现阶段试验来看是比较困难的（如果是自己建立集成库），在画电路图时可能会跳过这一步吧。建立了集成库就算是完成了一半，之后便能新建原理图（schematic）与PCB，用制作完成的集成库中的元件设计电路，完成后编译执行，能把原理图中的电器关系同步更新到PCB文件中。再在PCB中合理放置元件与布线、敷铜就算完成了。<br>而另一种是先建立原理图与PCB，需要什么元件再去新建库去找去画，完成一个元件马上用于原理图绘制，其实与第一种流程并无本质区别。<br>因为是自己学的，打算先尝试第一种流程完整地熟悉一遍，嗯。</p>
+<h1 id="画原理图之前的准备，建立自己的集成库"><a href="#画原理图之前的准备，建立自己的集成库" class="headerlink" title="画原理图之前的准备，建立自己的集成库"></a>画原理图之前的准备，建立自己的集成库</h1><h2 id="起步还是新建工程"><a href="#起步还是新建工程" class="headerlink" title="起步还是新建工程"></a>起步还是新建工程</h2><p>文件&gt;新建&gt;工程&gt;pcb工程 重命名保存<br>在左侧工程上右键&gt;给工程添加新的&gt; schematic library，同时也添加pcb library，分别重命名保存在一个文件夹内。我都取名最小系统。<br>如果左边的project栏消失了，可以点击右下角的system选择project简单打开。</p>
+<p><img src="https://raw.githubusercontent.com/Granvallen/granvallen.github.io/master/img/pcb1.jpg" style="zoom:40%" alt="" /></p>
+<h2 id="添加元件"><a href="#添加元件" class="headerlink" title="添加元件"></a>添加元件</h2><p>建立完成后要向库内添加画图所需要的元件符号及封装。<br>对于原理图库添加的是在原理图中用到的各种元件符号。<br>对于原理图库，有两种添加元件的方式，第一种自己画，第二种从其他库中复制。<br>自己画可以用上方的绘制工具，简单地画出矩形，添加针脚等。我自己尝试绘制了一个51单片机，有一些要点简单记录下。</p>
+<ul>
+<li>1.鼠标点着移动图形的时候可以使用xy使其对称翻转，使用空格键旋转，还可使用tab键快速打开属性菜单，比如针脚可以设置名字与标识是否可见，名字指的比如P1.0口，标识使用管脚序号1-40，用于以后电器连接的参照。一般让两个都可见。（更多的快捷键在抓住图像时，下面会有提示）</li>
+<li>2.针脚每放一个序号会自动加1，这里要注意两针脚之间的距离，此后所有器件相邻针脚的距离尽可能相同，否则后期连线异常痛苦，不要问我是怎么知道的。</li>
+<li>3.针脚有叉的一端是热点，朝器件外与导线相连。</li>
+<li>4.对于有些管脚名字上有横线，比如EA脚，可输成E\A\来显示。</li>
+<li>5.画完一个元件后除了设定名称，比如stc89c51，还要设定一下器件属性（菜单栏工具&gt;器件属性）中的Default Designator，如电阻在该栏填入R？，R表示是电阻，？在后期可自动填充为数字，变成R1，R2，R3等标号。</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/Granvallen/granvallen.github.io/master/img/pcb2.jpg" style="zoom:40%" alt="" /></p>
+<p>这是自己绘制的51芯片<br>总的来说自己绘制元器件看似有较大自由度，其实不然，如果没有暗定的标准，比如前面说的针脚宽度，到连线时各种不匹配。元器件绘制的大小也有讲究，弄得不好会变成笑话，比如下面这个。当然，牢记各种标准规则之后应该会更加灵活。</p>
+<p><img src="https://raw.githubusercontent.com/Granvallen/granvallen.github.io/master/img/pcb3.jpg" style="zoom:40%" alt="笑话" /></p>
+<p>对于刚使用AD的人来说，直接借鉴别人画好的元器件符号是不错的选择，而事实上也很多都是这么做的。比较明智的做法大概是自己或是别人的整理出一个元件库来，有需要直接能拿来用就行。只需简单的复制黏贴就能建起一个原理图库或是封装库，再编译整合成集成库（由于集成库不可编辑只能直接拿来画原理图，所以别人的集成库不能把元件直接复制到自己的集成库内）。听说集成库能重新分解为原理图库和封装库，奈何探索无果。<br>使用复制其他库的元件需要先在网上下载一些有常用元件的原理图库或封装库，在右边栏库&gt;library&gt;工程标签&gt;添加库，找到下载的库文件添加。添加后可以选择添加的库，并查看元件。</p>
+<p><img src="https://raw.githubusercontent.com/Granvallen/granvallen.github.io/master/img/pcb4.jpg" style="zoom:40%" alt="" /></p>
+<p>复制过程只要找到需要的元件右键&gt;Edit Component，然后全选图形复制，切换到自己建的库 工具&gt;新器件 然后改名黏贴即可，然后保存。<br>至于封装库也可以进行类似操作。<br>封装库包含了各种器件封装的焊盘样式，也可以自己画，一些要点记录下</p>
+<ul>
+<li>1.切换到pcb library，使用右上角的焊盘在图上放置焊盘，tab打开属性都是一样的。</li>
+<li>2.AD中的默认单位是mil（1mil=0.0254mm），可以按q切换成mm。焊盘放置长度应该与元件封装匹配。普通洞洞板两孔之间的长度是100mil，<br>如果是直插轴型电阻器件，焊盘距离300mil比较美观。</li>
+<li>3.使用菜单报告&gt;测量工具（ctrl+m）可用于测量两焊盘之间的距离，不过在此之前，可以使用编辑&gt;设定参考&gt;定位 重新设置参考点。</li>
+<li>4.画元件不仅要有焊盘有时必须要有轮廓，这会在pcb电路板上起表示作用。选择底部的Top Overlay丝印层（黄色的），在这层作图会作为标记印在电路板上。选放置走线（焊盘左边）进行作画。</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/Granvallen/granvallen.github.io/master/img/pcb5.jpg" style="zoom:40%" alt="" /></p>
+<p>5.还需要注意的一点是封装的焊盘也是有标号的，标号需要与原理图库的元件的针脚序号相对，特别是三极管，电解电容之类有管脚差异的元器件。<br>6.焊盘属性设置的时候小屏高分辨率显示屏碰到的麻烦。无法看到整个菜单，确认只能用回车，或者让任务栏消失会好点。这样的问题不在少数。</p>
+<p><img src="https://raw.githubusercontent.com/Granvallen/granvallen.github.io/master/img/pcb6.jpg" style="zoom:40%" alt="尴尬" /><br>我通过查找复制，完成了原理图库和封装库，嗯，(ー`′ー)</p>
+<p>一共用到9个元器件</p>
+<p><img src="https://raw.githubusercontent.com/Granvallen/granvallen.github.io/master/img/pcb7.jpg" style="zoom:40%" alt="" /></p>
+<p><img src="https://raw.githubusercontent.com/Granvallen/granvallen.github.io/master/img/pcb8.jpg" style="zoom:40%" alt="" /></p>
+<p>要点：在复制封装库元件的时候全选复制后还要左键选一个点作为参照才能成功粘过去。<br>参考部分增加各种器件的封装资料</p>
+<h2 id="连接库"><a href="#连接库" class="headerlink" title="连接库"></a>连接库</h2><p>选中建好的原理图库&gt;工具&gt;模式管理<br>依次选中元件&gt;add footprint&gt;输入对应封装名（建库时我把两库元件名字都统一了）会自动找到对应封装&gt;点确定即可<br>经试验好像不分大小写</p>
+<h2 id="编译成集成库"><a href="#编译成集成库" class="headerlink" title="编译成集成库"></a>编译成集成库</h2><p>集成库的生成是可选的，库连接完毕后，就可以添加进工程进行原理图绘制的<br>新建&gt;工程&gt;集成库 改名保存<br>把原理图库和封装库都拖到集成库内，右键集成库&gt;Compile Integrated Library 成功不会报错（其实不知道出错会怎样(　・ˍ・)<br>成功后，pcb工程会自动安装上制作的集成库，马上就可以用里面的元器件作图了。</p>
+<p><img src="https://raw.githubusercontent.com/Granvallen/granvallen.github.io/master/img/pcb10.jpg" style="zoom:40%" alt="" /></p>
+<h2 id="补充部分-3D封装"><a href="#补充部分-3D封装" class="headerlink" title="补充部分-3D封装"></a>补充部分-3D封装</h2><p>在制作封装库的时候可以顺带加入3D封装库（这是可选的，增加后可以生成3D模型）操作是打开一个元件的封装&gt;放置&gt;3D元件体，弹出的设置菜单选择属性步骤模型&gt;插入步骤模型，找到3D模型文件就行了，一般是step文件，AD不能画3D模型，必须在其他绘制软件中画好来导入，像是Solidworks。</p>
+<p><img src="https://raw.githubusercontent.com/Granvallen/granvallen.github.io/master/img/pcb9.jpg" style="zoom:40%" alt="" /></p>
+<p>无语菜单栏又显示不完全<br>紫色框是插入的3D封装，正上方的选框可以切换到3D视角观察，可以更改菜单中的xyz参数，使3D模型处于合适的位置，管脚能进入焊盘。如果大小什么的不合适，只能删了重找。<br>3D封装与普通封装类似，也可从有3D封装的封装库中复制过来。<br>参考部分增加3D封装查找资料</p>
+<h1 id="原理图及PCB设计"><a href="#原理图及PCB设计" class="headerlink" title="原理图及PCB设计"></a>原理图及PCB设计</h1><h2 id="原理图绘制"><a href="#原理图绘制" class="headerlink" title="原理图绘制"></a>原理图绘制</h2><p>左侧PCB工程右键&gt;给工程添加新的&gt;Schematic和PCB 改名保存<br>Schematic就是原理图，直接把右侧集成库中的元件拖出来作图。</p>
+<p><img src="https://raw.githubusercontent.com/Granvallen/granvallen.github.io/master/img/pcb11.jpg" style="zoom:40%" alt="" /></p>
+<p>作图中…<br>大致上完工，还需做一下细节部分的处理，在此之前先做下记录</p>
+<p><img src="https://raw.githubusercontent.com/Granvallen/granvallen.github.io/master/img/pcb12.jpg" style="zoom:40%" alt="" /></p>
+<ul>
+<li>1.上方的 放置线 设置导线 VCC与GND也不多讲了</li>
+<li>2.设置网络。设置网络是图上两点作上标记，不显示导线而实现电气连接。方法是先用放置线画导线延长一段，使用上方的 放置网络标号，点击延长导线的末端。双击末端打开网络标签，在网络选项填写需要连接的另一端标号。使用VCC与GND，必须要有点连接到他们。</li>
+<li>3.元件边上的红线表示有错误，上图应该是器件重复了（如有了两个R1）下面会处理。可以先编译下，能显示出错误。保佑我不是其他错误。</li>
+<li>4.如果有元器件对不齐可以改小格点或改大格点，左下角的Grid显示了当前格点大小，右上角的栅格工具可以调节。</li>
+</ul>
+<p>下面是细节处理操作</p>
+<ul>
+<li>1.首先是给各元器件编号消除错误（使？变为数字，生成R1，R2等等），有特殊需要可以自己一个个改，但这样就失去了使用？的意义。我是用自动标号进行处理，工具&gt;标注所有器件。果然红线消失了。</li>
+<li>2.隐藏元器件名称。选中一个元器件的名称（选中有绿框）&gt;右键查找相似对象(把下面的钩都打上)&gt;确定之后会把图上所以的器件名称选定并弹出菜单&gt;hide项打钩退出&gt;图上右键&gt;过滤器&gt;清除过滤器 完成<br>有点后悔当时让针脚的序号可见，不然看起来更简洁一些。<br>这是一个很有用的方法，不止可以用在这里，比如统一改封装等等。</li>
+<li>3.添加器件的值（如一个10k电阻），双击一个器件符号&gt; parameters栏（右边大白框）下的添加&gt;在值那一栏添加元件的值（10k），并设置为可见。</li>
+<li>4.多针脚器件连接时，可以先针脚对其连接，按住ctrl键往外拉，此时两器件针脚之间是连着导线的。用这种方法可以快速连接两多针脚器件。</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/Granvallen/granvallen.github.io/master/img/pcb13.jpg" style="zoom:40%" alt="" /></p>
+<p>这样就算完成了，右下角的原理图信息可以右键&gt;放置&gt;文本框 填写</p>
+<h2 id="PCB与放置play"><a href="#PCB与放置play" class="headerlink" title="PCB与放置play"></a>PCB与放置play</h2><p>完成原理图绘制后&gt;菜单栏 设计&gt;Update PCB document XXX&gt;执行更改<br>执行没有错误后切换到PCB，所有元器件封装就在黑板边上，先拖动封装到黑色区域内，选中包围封装的膜删除。然后就是摆放器件封装。<br>这个应该需要积累经验，简单来说是整洁美观便于之后的布线。有导线连接的焊盘之间有显示白线，供放置与布线参考<br>放置完后大概是这个样子，不知布局是否合理</p>
+<p><img src="https://raw.githubusercontent.com/Granvallen/granvallen.github.io/master/img/pcb14.jpg" style="zoom:40%" alt="" /></p>
+<p>接下来是确定电路板大小，下方选择Mechanical标签（机械层也是禁止布线层，紫色的）&gt;用右上角的应用工具选 放置走线画出边框&gt;选中所有边框&gt;设计&gt;板子形状&gt;按照所选对象定义<br>完成后 右键&gt;过滤器&gt;清除过滤器</p>
+<p><img src="https://raw.githubusercontent.com/Granvallen/granvallen.github.io/master/img/pcb15.jpg" style="zoom:40%" alt="成品" /></p>
+<p><img src="https://raw.githubusercontent.com/Granvallen/granvallen.github.io/master/img/pcb16.jpg" style="zoom:40%" alt="3D视角" /></p>
+<p>补充</p>
+<ul>
+<li>1.如果有需要可以把边框棱角做一个弧度，方法类似。如果还需要四个螺丝洞做一个支架，在四个角分别放置一个口径差不多的 过孔（焊盘边上） 就行。</li>
+<li>2.如果加入了3D封装，3D视角时是摆满元件的，直接是焊接完成之后的效果。<h2 id="布线与敷铜"><a href="#布线与敷铜" class="headerlink" title="布线与敷铜"></a>布线与敷铜</h2>pcb焊盘之间需用铜线相连，简单电路用一层布线，也就是只用了电路板的表面或底面布线。稍复杂的两层布线也能解决问题，还可以利用过孔。过孔是穿越两层的空洞，铜线能穿越过孔从一层到另一层，以解决棘手的连接问题，当然也可以利用焊盘，有时是不得已而为之。三层四层的电路板可以想象，薄薄的电路板中有多层电气通路，设计难度可见一斑。<br>布线也需要经验的积累吧，原则上是两层的线尽量垂直而不平行（比如顶层线都尽量竖直，底层就尽量水平），减少电容效应与干扰。<br>下方的Top Layer与Bottom Layer标签就是顶层与底层布线层。<br>使用右上角的 交互式布线连接 进行布线。把VCC电源与GND的布线放到最后，电源部分的线宽应稍大些，设置为40mil。</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/Granvallen/granvallen.github.io/master/img/pcb17.jpg" style="zoom:40%" alt="不如自动布线系列" /></p>
+<p>其实也可以使用自动布线&gt;全部 不过灵活性差些，对于复杂电路，布线还是交给电脑吧<br>要点</p>
+<ul>
+<li>1.规则。设计&gt;规则 规则是布线时不需要遵守的，比如线离焊盘的最小距离，线宽等等。虽然项目很多，一般需要更改的只有几个，线宽可以在width项更改，设置线宽上限，使电源部分可以与其他部分不同。不符合规则的元件会变绿提示。</li>
+<li>2.过孔使用需先放在线上，还可以shift+ctrl+滚轮（研究了半天눈_눈）<br>完成后应该就可以敷铜了，敷铜也有很多的模式，关于敷铜是什么看到设置页面就知道了 放置&gt;多边形敷铜&gt;设定完成确定后 点击板四个角画框&gt;右键完成</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/Granvallen/granvallen.github.io/master/img/pcb18.jpg" style="zoom:40%" alt="顶层的敷铜" /></p>
+<p>要点</p>
+<ul>
+<li>1.有三种样式的敷铜solid、hatched和none，而Protel不支持solid填充模式，意味着如果工厂没有AD而用的是Protel，就不能识别soild样式。不过可以通过更改轨迹宽度与栅格尺寸相同（如图），来达到solid的效果。</li>
+<li>2.左侧属性 层选择要敷铜的层。右侧 连接到网络 就是指铺完后大片的铜（没有作为导线连入网络的铜，作为死铜）可能需要连接的导线，一般选择GND接地，下面的选项便是设置是否连接到所选网络。Pour Over ALL Same Net Objects是使得大片的铜与所选网络融合，Don’t Pour Over Same Net Objects则相反。</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/Granvallen/granvallen.github.io/master/img/pcb19.jpg" style="zoom:40%" alt="最终成品" /></p>
+<p><img src="https://raw.githubusercontent.com/Granvallen/granvallen.github.io/master/img/pcb20.jpg" style="zoom:40%" alt="底层敷铜" /></p>
+<p>PCB画好了_(´ཀ`」 ∠)_</p>
+<h1 id="修饰与导出"><a href="#修饰与导出" class="headerlink" title="修饰与导出"></a>修饰与导出</h1><p>可以在空白处 切换到丝印层做一些修饰如使用放置&gt;字符串 印上自己的名字之类的。<br>文件导出：<br>文件&gt;制造输出&gt;Gerber Files<br>或直接将工程发给工厂，把工程另存为PCB4.0 Binary Files， Protel也能打开的文件格式。</p>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p>常用封装 <a target="_blank" rel="noopener" href="http://blog.csdn.net/kobesdu/article/details/24257755">参考</a><br>3D封装库 <a target="_blank" rel="noopener" href="http://www.3dcontentcentral.cn/Search.aspx?arg=0805">参考</a><br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>終わり</p>
+</div><div class="tags"><a href="/tags/Altium-Designer/">Altium Designer</a><a href="/tags/Tool/">Tool</a></div><div class="post-nav"><a class="pre" href="/pwmdac/">PWM实现DAC尝试</a><a class="next" href="/beep/">蜂鸣器君的发声练习</a></div><div id="container"></div><link rel="stylesheet" href="//unpkg.com/gitalk/dist/gitalk.css"><script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script><script>var gitalk = new Gitalk({
+clientID: 'e5d91200660f217a370f',
+clientSecret: 'c93b4537f4e131796aeba8fdd8f111a38451f12a',
+repo: 'granvallen.github.io',
+owner: 'Granvallen',
+admin: 'Granvallen',
+id: location.pathname,      // Ensure uniqueness and length less than 50
+distractionFreeMode: false,  // Facebook-like distraction free mode
+language: 'zh-CN',
+distractionFreeMode: true
+})
+
+gitalk.render('container')
+
+</script></div></div></div><div class="pure-u-1 pure-u-md-4-4"><div id="footer">Copyright © 2023 <a href="/." rel="nofollow">Granvallen.</a> <br /> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a> Theme by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/3.2.5/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/3.2.5/jquery.fancybox.min.css"><script type="text/javascript" src="/js/search.js?v=0.0.0"></script><script>var search_path = 'search.xml';
+if (search_path.length == 0) {
+   search_path = 'search.xml';
+}
+var path = '/' + search_path;
+searchFunc(path, 'local-search-input', 'local-search-result');
+</script><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = 'https://hm.baidu.com/hm.js?' + 'bf1ecb4728a04112cb191bc2e62aa815';
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+  })();
+</script><script type="text/x-mathjax-config">MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+  });
+</script><script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML" async></script><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>
