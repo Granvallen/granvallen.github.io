@@ -1,44 +1,51 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title>CodeCraft 2019 | Granvallen;Nest</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/7.0.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"><meta name="generator" content="Hexo 5.4.2"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">CodeCraft 2019</h1><a id="logo" href="/.">Granvallen;Nest</a><p class="description">人生苦短</p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/guestbook/"><i class="fa fa-comments"> 留言本</i></a><a href="/about/"><i class="fa fa-terminal"> 关于</i></a><a href="/atom.xml"><i class="fa fa-rss"> 订阅</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-4-4"><div class="content_container"><div class="post"><h1 class="post-title">CodeCraft 2019</h1><div class="post-meta">Jun 23, 2019<span> | </span><span class="category"><a href="/categories/Coding/">Coding</a><a href="/categories/Coding/C-C/">C/C++</a></span><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script><span id="busuanzi_container_page_pv"> | <span id="busuanzi_value_page_pv"></span><span> 阅读</span></span></div><div class="clear"><div class="toc-article" id="toc"><div class="toc-title">文章目录</div><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%A7%84%E5%88%99%E7%BB%86%E8%8A%82"><span class="toc-number">1.</span> <span class="toc-text">规则细节</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E8%BD%A6%E8%BE%86%E5%9C%A8%E8%B7%AF%E4%B8%8A%E8%A1%8C%E9%A9%B6%E7%9A%84%E8%A7%84%E5%88%99"><span class="toc-number">1.1.</span> <span class="toc-text">关于车辆在路上行驶的规则</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E8%BD%A6%E8%BE%86%E5%9C%A8%E8%B7%AF%E5%8F%A3%E8%B0%83%E5%BA%A6%E7%9A%84%E8%A7%84%E5%88%99"><span class="toc-number">1.2.</span> <span class="toc-text">关于车辆在路口调度的规则</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E8%BD%A6%E8%BE%86%E4%BB%8E%E8%B7%AF%E5%8F%A3%E8%BF%9B%E5%85%A5%E9%81%93%E8%B7%AF"><span class="toc-number">1.3.</span> <span class="toc-text">关于车辆从路口进入道路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E6%AD%BB%E9%94%81"><span class="toc-number">1.4.</span> <span class="toc-text">关于死锁</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Q-amp-A"><span class="toc-number">1.5.</span> <span class="toc-text">Q&amp;A</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%A8%8B%E5%BA%8F%E5%A4%A7%E4%BD%93%E6%A1%86%E6%9E%B6"><span class="toc-number">3.</span> <span class="toc-text">程序大体框架</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9C%80%E5%90%8E"><span class="toc-number">4.</span> <span class="toc-text">最后</span></a></li></ol></div></div><div class="post-content"><p>又是一篇拖了好长时间的文章…</p>
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title>CodeCraft 2019 | Granvallen;Nest</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=1.0.0"><link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/normalize.css/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/purecss/build/pure-min.min.css"><link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/purecss/build/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script><link rel="icon" mask="" sizes="any" href="/favicon.ico"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = 'https://hm.baidu.com/hm.js?' + 'bf1ecb4728a04112cb191bc2e62aa815';
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+  })();
+</script><script type="text/javascript" src="//cdn.jsdelivr.net/npm/clipboard/dist/clipboard.min.js"></script><script type="text/javascript" src="//cdn.jsdelivr.net/gh/codeseven/toastr/build/toastr.min.js"></script><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/codeseven/toastr/build/toastr.min.css"><meta name="generator" content="Hexo 5.4.2"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">CodeCraft 2019</h1><a id="logo" href="/.">Granvallen;Nest</a><p class="description">人生苦短</p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/guestbook/"><i class="fa fa-comments"> 留言</i></a><a href="/about/"><i class="fa fa-terminal"> 关于</i></a><a href="/atom.xml"><i class="fa fa-rss"> 订阅</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-4-4"><div class="content_container"><div class="post"><h1 class="post-title">CodeCraft 2019</h1><div class="post-meta">Jun 23, 2019<span> | </span><span class="category"><a href="/categories/Coding/">Coding</a><a href="/categories/Coding/C-C/">C/C++</a></span><span class="post-time"><span class="post-meta-item-text"> | </span><span class="post-meta-item-icon"><i class="fa fa-keyboard-o"></i><span class="post-count"> 5,101</span><span class="post-meta-item-text"> 字</span></span></span><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script><span id="busuanzi_container_page_pv"> | <span id="busuanzi_value_page_pv"></span><span> 阅读</span></span></div><div class="clear"><div class="toc-article" id="toc"><div class="toc-title">文章目录</div><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%A7%84%E5%88%99%E7%BB%86%E8%8A%82"><span class="toc-number">1.</span> <span class="toc-text">规则细节</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E8%BD%A6%E8%BE%86%E5%9C%A8%E8%B7%AF%E4%B8%8A%E8%A1%8C%E9%A9%B6%E7%9A%84%E8%A7%84%E5%88%99"><span class="toc-number">1.1.</span> <span class="toc-text">关于车辆在路上行驶的规则</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E8%BD%A6%E8%BE%86%E5%9C%A8%E8%B7%AF%E5%8F%A3%E8%B0%83%E5%BA%A6%E7%9A%84%E8%A7%84%E5%88%99"><span class="toc-number">1.2.</span> <span class="toc-text">关于车辆在路口调度的规则</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E8%BD%A6%E8%BE%86%E4%BB%8E%E8%B7%AF%E5%8F%A3%E8%BF%9B%E5%85%A5%E9%81%93%E8%B7%AF"><span class="toc-number">1.3.</span> <span class="toc-text">关于车辆从路口进入道路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E6%AD%BB%E9%94%81"><span class="toc-number">1.4.</span> <span class="toc-text">关于死锁</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Q-amp-A"><span class="toc-number">1.5.</span> <span class="toc-text">Q&amp;A</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%A8%8B%E5%BA%8F%E5%A4%A7%E4%BD%93%E6%A1%86%E6%9E%B6"><span class="toc-number">3.</span> <span class="toc-text">程序大体框架</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9C%80%E5%90%8E"><span class="toc-number">4.</span> <span class="toc-text">最后</span></a></li></ol></div></div><div class="post-content"><p>又是一篇拖了好长时间的文章…</p>
 <p>CodeCraft是华为2015年起开始举办的编程挑战赛, 强调享受用coding解决问题的乐趣. 其实那段时间(两个月前)有好几个华为组织的比赛什么销售, 云计算等等. 我因为之前都没参加过, 加之感觉coding会好玩一些所以报名了CodeCraft. 虽然最后完成了程序但没及时上传（；´д｀）ゞ, 嗯, 从结果来说好像连炮灰也没当成?</p>
 <span id="more"></span>
 <p>题目在<a target="_blank" rel="noopener" href="https://codecraft.huawei.com/">这里</a>, 简单来说就是车辆调度的问题, 官方给出car.txt, road.txt和cross.txt三个文件即车, 路和路口信息, 根据简化后的交通规则, 你的程序需要输出每辆车的上路时间以及行驶路线. 拿到题目首先就必须研究下这个设定的交通规则, 其中涉及到不少细节问题, 大体规则可以参考官方文档, 以下是一些当时有疑问的细节和官方解答.</p>
 <h1 id="规则细节"><a href="#规则细节" class="headerlink" title="规则细节"></a>规则细节</h1><h2 id="关于车辆在路上行驶的规则"><a href="#关于车辆在路上行驶的规则" class="headerlink" title="关于车辆在路上行驶的规则"></a>关于车辆在路上行驶的规则</h2><blockquote>
-<p>车辆如果行驶过程中，发现前方有车辆阻挡，且阻挡的车辆为终止车辆，则该辆车也被标记为终止车辆。（与前方阻挡的车辆的距离记为s）则该车辆最大行驶速度为v = min(最高车速，道路限速，s/t) 其中t=1，该车辆最大可行驶距离为s。</p>
+<p>车辆如果行驶过程中, 发现前方有车辆阻挡, 且阻挡的车辆为终止车辆, 则该辆车也被标记为终止车辆. （与前方阻挡的车辆的距离记为s）则该车辆最大行驶速度为v = min(最高车速, 道路限速, s/t) 其中t=1, 该车辆最大可行驶距离为s. </p>
 </blockquote>
 <p>这里官方文档第二句话少了”否”字, 应为</p>
 <blockquote>
-<p>否则该车辆最大行驶速度为v = min(最高车速，道路限速，s/t) 其中t=1，该车辆最大可行驶距离为s。</p>
+<p>否则该车辆最大行驶速度为v = min(最高车速, 道路限速, s/t) 其中t=1, 该车辆最大可行驶距离为s. </p>
 </blockquote>
 <p>也就是说当有前车开得比较慢时, 该车也要降低速度. 而第一句是说如果前车停了, 则该车立即停止. <strong>因此, 每辆车的速度每次轮到时都要根据前车情况重新计算. </strong> 另外如果前车是等待调度状态, 那么该车也是等待状态.</p>
 <p>下面是官方给出的例子:</p>
 <blockquote>
-<p>假定道路有如下车辆，车AB车速为3，CD均为车速为1<br><strong>A空空B空空CD （路口）</strong></p>
-<p>按步骤一后ABCD均为等待状态。</p>
-<p>在处理待状态车辆D后，假定D前进到其他道路后，此刻道路状态变化为</p>
+<p>假定道路有如下车辆, 车AB车速为3, CD均为车速为1<br><strong>A空空B空空CD （路口）</strong></p>
+<p>按步骤一后ABCD均为等待状态. </p>
+<p>在处理待状态车辆D后, 假定D前进到其他道路后, 此刻道路状态变化为</p>
 <p><strong>A空空B空空C空   （路口）</strong></p>
-<p><strong>接下来因D车辆的前进后，需要对该条道路该车道的所有车辆进行一次调度</strong></p>
+<p><strong>接下来因D车辆的前进后, 需要对该条道路该车道的所有车辆进行一次调度</strong></p>
 <p>因此:</p>
-<p>C的车速为1，则C车前进1个距离，且为终止状态。<strong>A空空B空空空C   （路口）</strong></p>
-<p>B的车速为3，则B车前进3个距离，且为终止状态。<strong>A空空空空空BC   （路口）</strong></p>
-<p>A的车速为3，则A车前进3个距离，且为终止状态。<strong>空空空A空空BC   （路口）</strong></p>
-<p><strong>调度后道路车辆分布为：空空空A空空BC   （路口），且ABC均为终止状态</strong></p>
+<p>C的车速为1, 则C车前进1个距离, 且为终止状态. <strong>A空空B空空空C   （路口）</strong></p>
+<p>B的车速为3, 则B车前进3个距离, 且为终止状态. <strong>A空空空空空BC   （路口）</strong></p>
+<p>A的车速为3, 则A车前进3个距离, 且为终止状态. <strong>空空空A空空BC   （路口）</strong></p>
+<p><strong>调度后道路车辆分布为: 空空空A空空BC   （路口）, 且ABC均为终止状态</strong></p>
 </blockquote>
 <h2 id="关于车辆在路口调度的规则"><a href="#关于车辆在路口调度的规则" class="headerlink" title="关于车辆在路口调度的规则"></a>关于车辆在路口调度的规则</h2><p>例子如下图:</p>
 <p><img src="https://raw.githubusercontent.com/Granvallen/granvallen.github.io/master/img/cross.png" style="zoom:67%;" /></p>
 <blockquote>
 <p>在本路口调度道路的顺序为</p>
 <p>5000、5001、5010、5018、5000、5001、5010、5018、5000、5001、5010、5018…5000、5001、5010、5018</p>
-<p>整个系统调度按路口ID升序进行调度各个路口，路口内各道路按道路ID升序进行调度。</p>
+<p>整个系统调度按路口ID升序进行调度各个路口, 路口内各道路按道路ID升序进行调度. </p>
 </blockquote>
 <p>也就是说, <strong>路口调度顺序与各道路的调度顺序是固定的.</strong></p>
 <blockquote>
-<p>首先调度5000道路，只有D100可以走，因为D101左转与5010道路的D200冲突，所以必须等待5010车道上没有直行冲突。</p>
+<p>首先调度5000道路, 只有D100可以走, 因为D101左转与5010道路的D200冲突, 所以必须等待5010车道上没有直行冲突. </p>
 </blockquote>
 <p>这里的<code>D101</code>官方又写错了, 应该是<code>L101</code>, 该车是当前5000道路优先级最高的车, 但与5010最高优先级直行的车<code>D200</code>冲突(都要到5018道路), 直行的优先级更高, 故对5000道路的调度先搁下了(当道路最高优先级的车停下, 其他车也不能动). </p>
 <p><strong>因此, 当对路口的一条道路调度时, 首先看这条道路优先级最高的车, 若不与其他道路最高优先级的车冲突, 则立即行驶, 然后看该道路第二优先级的车. 如果有冲突, 则调度下一条道路.</strong></p>
 <blockquote>
-<p>其次再调度5001道路，因5001道路的L300与道路5018的D400冲突，所以L300必须等待道路5018的D400先行后再调度行驶。</p>
-<p>再次调度道路5010，D200、D201、D202不与其他道路的车辆冲突，可以直接行驶。L203左转，且道路5001无左转车辆与其冲突，因此L203可以左转。L204也可以左转。L205为右转，与左侧道路5000的车辆L101不冲突（只与道路5000的直行会发生冲突），且与道路5018的D400不发生冲突（只与道路5018的左转车辆发生冲突），因此车辆L205可以右转，依次道路5010上的剩余车辆全部可以通过。</p>
+<p>其次再调度5001道路, 因5001道路的L300与道路5018的D400冲突, 所以L300必须等待道路5018的D400先行后再调度行驶. </p>
+<p>再次调度道路5010, D200、D201、D202不与其他道路的车辆冲突, 可以直接行驶. L203左转, 且道路5001无左转车辆与其冲突, 因此L203可以左转. L204也可以左转. L205为右转, 与左侧道路5000的车辆L101不冲突（只与道路5000的直行会发生冲突）, 且与道路5018的D400不发生冲突（只与道路5018的左转车辆发生冲突）, 因此车辆L205可以右转, 依次道路5010上的剩余车辆全部可以通过. </p>
 </blockquote>
 <p>在道路通畅的条件下(驶入道路没有限制), 路口调度应该是这样的:</p>
 <ul>
@@ -52,27 +59,27 @@
 <p>再调度道路5000….</p>
 <p>再调度道路5001…</p>
 <p>再调度道路5000….</p>
-<p>是否发生冲突，只与相关道路的第一优先级车辆的行驶方向进行比较，看是否发生冲突。</p>
-<p>每次调度到一条道路，直到该道路无车辆可调度，或该条道路上车辆处于冲突状态。也就是说尽可能多地让该道路行驶，直到没有车辆或者车辆与其他车辆发生冲突不可行驶。</p>
+<p>是否发生冲突, 只与相关道路的第一优先级车辆的行驶方向进行比较, 看是否发生冲突. </p>
+<p>每次调度到一条道路, 直到该道路无车辆可调度, 或该条道路上车辆处于冲突状态. 也就是说尽可能多地让该道路行驶, 直到没有车辆或者车辆与其他车辆发生冲突不可行驶. </p>
 </blockquote>
 <h2 id="关于车辆从路口进入道路"><a href="#关于车辆从路口进入道路" class="headerlink" title="关于车辆从路口进入道路"></a>关于车辆从路口进入道路</h2><p><img src="https://raw.githubusercontent.com/Granvallen/granvallen.github.io/master/img/enterroad.png" style="zoom: 80%;" /></p>
 <p>这里要注意的是<strong>发车顺序</strong>, 先是100-&gt;200-&gt;300, 然后101-&gt;201-&gt;301. 这里200比101更靠近路口, 尽管101在1号道, 200在2号道, 依然是200先行. 这一点在上面的路口冲突判断的图里也有体现, 当<code>D101</code>走后是判断<code>L101</code>, 而不是<code>L103</code></p>
 <h2 id="关于死锁"><a href="#关于死锁" class="headerlink" title="关于死锁"></a>关于死锁</h2><blockquote>
-<p>基于10，<strong>参赛选手需要注意</strong>，一次调度能使所有车辆均到达各车辆的行驶速度行驶，就得保证不能出现各车辆循环等待的情况，否则该次调度就会<strong>锁死</strong>。循环等待是指比如车辆A等待车辆B，车辆B等待车辆C，车辆C等待车辆D，车辆D等待车辆E，车辆E等待车辆F，车辆F等待车辆A的情况。</p>
+<p>基于10, <strong>参赛选手需要注意</strong>, 一次调度能使所有车辆均到达各车辆的行驶速度行驶, 就得保证不能出现各车辆循环等待的情况, 否则该次调度就会<strong>锁死</strong>. 循环等待是指比如车辆A等待车辆B, 车辆B等待车辆C, 车辆C等待车辆D, 车辆D等待车辆E, 车辆E等待车辆F, 车辆F等待车辆A的情况. </p>
 </blockquote>
 <h2 id="Q-amp-A"><a href="#Q-amp-A" class="headerlink" title="Q&amp;A"></a>Q&amp;A</h2><p>问: 如果一个路口的所有道路的车都冲突不动了, 怎么办? 是直接结束该路口的调度? 这样的话如果下一路口调度了导致上一路口可以再进行调度, 还需要对上一路口进行调度吗? 如果不进行调度那么路口的调度顺序对结果影响很大?</p>
 <p>答: 是的, 会对上一路口再次进行调度(会进行下一次路口的调度循环), 只要有一个路口还需要调度, 就会再进行一次调度所有路口的循环</p>
 <p>问: 每辆车都有出发时间的限定, 但是规则中出现<code>实际出发时间</code>的说法, 那么是程序可以调节车的实际出发时间吗? 还是只能是因为道路堵塞推迟出发时间?</p>
-<p>答: 车辆的实际出发时间由参赛选手自行决定，但是不得早于车辆的计划出发时间</p>
+<p>答: 车辆的实际出发时间由参赛选手自行决定, 但是不得早于车辆的计划出发时间</p>
 <p>问: 起步车辆放置于车道的位置确定问题?</p>
 <p>答: 进入道路依然按车道小的优先策略进行</p>
 <p>问: 那么起步车辆与路口调度时的车辆比, 优先级如何?</p>
-<p>答: 系统调度先调度在路上行驶的车辆进行行驶，当道路上所有车辆全部不可再行驶后再调度等待上路行驶的车辆</p>
+<p>答: 系统调度先调度在路上行驶的车辆进行行驶, 当道路上所有车辆全部不可再行驶后再调度等待上路行驶的车辆</p>
 <p>问: 多辆车同地点同时发车?</p>
-<p>答: 交通规则有说明，同一时刻多辆车上路行驶，按车辆编号升序进行优先上路</p>
+<p>答: 交通规则有说明, 同一时刻多辆车上路行驶, 按车辆编号升序进行优先上路</p>
 <p>其他: </p>
 <blockquote>
-<p>整个系统限制参赛选手程序编译时间最大为60s，程序运行生成answer.txt时间为300s。</p>
+<p>整个系统限制参赛选手程序编译时间最大为60s, 程序运行生成answer.txt时间为300s. </p>
 <p>车辆的长度为1(占一格), 行驶速度的含义是一个时间单位内前进的格数</p>
 </blockquote>
 <h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p>整个系统要调度的只有车, 更确切点说是车的两个值: <strong>实际出发时间</strong>和<strong>车在每个路口选择的行驶方向</strong>, 除此之外都由规则定死了. 也就说只要确定了每辆车的这两个值, 那么最后的结果就是确定的, 不存在任何的随机性.</p>
@@ -121,34 +128,18 @@
 <p>.</p>
 <p>.</p>
 <p>終わり</p>
-</div><div class="tags"><a href="/tags/C-C/">C/C++</a><a href="/tags/CodeCraft/">CodeCraft</a></div><div class="post-nav"><a class="pre" href="/lightoutgame/">点灯游戏与数学之美</a><a class="next" href="/xingyouji/">从《星游记》出发聊聊所见所想</a></div><div id="container"></div><link rel="stylesheet" href="//unpkg.com/gitalk/dist/gitalk.css"><script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script><script>var gitalk = new Gitalk({
-clientID: 'e5d91200660f217a370f',
-clientSecret: 'c93b4537f4e131796aeba8fdd8f111a38451f12a',
-repo: 'granvallen.github.io',
-owner: 'Granvallen',
-admin: 'Granvallen',
-id: location.pathname,      // Ensure uniqueness and length less than 50
-distractionFreeMode: false,  // Facebook-like distraction free mode
-language: 'zh-CN',
-distractionFreeMode: true
-})
-
-gitalk.render('container')
-
-</script></div></div></div><div class="pure-u-1 pure-u-md-4-4"><div id="footer">Copyright © 2023 <a href="/." rel="nofollow">Granvallen.</a> <br /> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a> Theme by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/3.2.5/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/3.2.5/jquery.fancybox.min.css"><script type="text/javascript" src="/js/search.js?v=0.0.0"></script><script>var search_path = 'search.xml';
+</div><div class="tags"><a href="/tags/C-C/"><i class="fa fa-tag"></i>C/C++</a><a href="/tags/CodeCraft/"><i class="fa fa-tag"></i>CodeCraft</a></div><div class="post-nav"><a class="pre" href="/lightoutgame/">点灯游戏与数学之美</a><a class="next" href="/xingyouji/">从《星游记》出发聊聊所见所想</a></div><div id="tcomment"></div><script src="https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js"></script><script>twikoo.init({
+  envId: 'https://granvallen.github.io/',
+  el: '#tcomment',
+  region: '',
+  path: ''
+})</script></div></div></div><div class="pure-u-1 pure-u-md-4-4"><div id="footer">Copyright © 2023 <a href="/." rel="nofollow">Granvallen.</a> <br /> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a> Theme by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=1.0.0" async></script><script type="text/javascript" src="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=1.0.0" async></script><link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.css"><link rel="stylesheet" type="text/css" href="/css/search.css?v=1.0.0"><script type="text/javascript" src="/js/search.js?v=1.0.0"></script><script>var search_path = 'search.xml';
 if (search_path.length == 0) {
    search_path = 'search.xml';
 }
 var path = '/' + search_path;
 searchFunc(path, 'local-search-input', 'local-search-result');
-</script><script>var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = 'https://hm.baidu.com/hm.js?' + 'bf1ecb4728a04112cb191bc2e62aa815';
-  var s = document.getElementsByTagName("script")[0];
-  s.parentNode.insertBefore(hm, s);
-  })();
-</script><script type="text/x-mathjax-config">MathJax.Hub.Config({
+</script><script type="text/javascript" src="/js/copycode.js" successtext="复制成功!"></script><link rel="stylesheet" type="text/css" href="/css/copycode.css"><script type="text/x-mathjax-config">MathJax.Hub.Config({
   tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
   });
-</script><script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML" async></script><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>
+</script><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML" async></script><script type="text/javascript" src="/js/codeblock-resizer.js?v=1.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=1.0.0"></script></div></body></html>
