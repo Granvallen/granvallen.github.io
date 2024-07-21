@@ -9,7 +9,7 @@
 <p>其实我在准备一个更长~篇的更新, 千真万确, 不过目前可公开的情报还不多. 那么在我们仍未知道的更新到来之前, 这次, 难得正经地, 来简单聊聊 Pixel Art 的缩放及抗锯齿问题吧…</p>
 <span id="more"></span>
 <h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>さて, 为什么会谈及这个问题? 我在处理像素艺术(Pixel Art)相关渲染的过程中, 遇到了这个问题. 具体可以描述为, 当<strong>像素风格纹理的精灵图(Sprite)在缩放或移动时, 会出现像素抖动与闪烁的现象</strong>, 看上去像是像素的波浪, 非常影响观感. 如图1左上角的例子.</p>
-<p><img src="https://raw.githubusercontent.com/Granvallen/granvallen.github.io/master/img/pixel_aa_1.gif" style="zoom:50%;" /></p>
+<p><img src="https://raw.githubusercontent.com/Granvallen/granvallen.github.io/master/img/pixel_aa_1.gif" style="zoom:80%;" title="图1" /></p>
 <p>顺带一提, 精灵图上的角色是GBA游戏<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%81%96%E5%8A%8D%E5%90%8C%E7%9B%9F">《公主联盟》</a>中的<a target="_blank" rel="noopener" href="https://lacrimacastle.net/index.php?game=Yggdra&amp;c=PSP&amp;sec=sprites">大天使マリエッタ</a>.</p>
 <p>这个问题其实非常常见, 稍作检索就能找到原因与解决方法. 一个简单的规则是, <strong>像素图的放大需要是原尺寸的整数倍, 否则会出现畸变(Distorted)</strong>. 这种畸变是规律性的, 在放大或移动过程中就会出现有规律抖动和闪烁. 这里, 通常我们默认像素原图是比较小的, 所以在屏幕显示时主要是进行图像放大操作, 即Upscaling.</p>
 <p>以上, 虽然是简单的理解, 但从某种角度说确实是最优解, 即不做任何的妥协, 让像素艺术分毫不损地显示到屏幕上吧! 在大部分时候, 上述方法并不会增加什么负担, 不过是限制游戏分辨率而已. 也可以参考 unity 官方的 <a target="_blank" rel="noopener" href="https://github.com/Unity-Technologies/2d-pixel-perfect">2d-pixel-perfect: Pixel Perfect Camera</a>项目的方案.</p>
@@ -31,10 +31,10 @@
 <p>事实上在 Unity 中, 当 Sprite 放大时, 会使用设定的 Filter Mode 对纹理进行插值操作. 插值是为了让像素在纹理放大后依然采样到期望的颜色. 就像上面提到的, 即使此时多个像素对应同一个纹素, 在不同应用场景下(比如期望像素颜色平滑过渡), 这些像素也并非就期望取对应纹素的颜色, 而是交由插值方法来最终决定的. 可以说, 不同的插值方法定义了像素纹理采样时参考纹素颜色的方式. </p>
 <p>特别地, 对于像素艺术风格的纹理, 通常 Filter Mode 会选择设置为 Point, 即<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Nearest-neighbor_interpolation">最近邻插值(Nearest Neighbor Interpolation)</a>. 简单说, 就是直接使用距离最近纹素颜色作为采样像素的颜色. 这种插值方式不会造成像素的模糊, 保持了像素色块间颜色的锐利变化, 也即保持了所谓的”像素感”. 可以说是像素艺术纹理理想的插值方法.</p>
 <p>唯一的问题是, 当放大倍数为非整数倍时, 会有部分落在插值参考纹素边缘的采样像素, 这些像素无论最终选择插值为边界哪一边的颜色, 都不可避免地让色块组成的形状产生畸变. 这里引用下 Cole 在 <a target="_blank" rel="noopener" href="https://colececil.io/blog/2017/scaling-pixel-art-without-destroying-it/">Scaling Pixel Art Without Destroying It</a> 一文中的图, 非常直观地说明了这一点. </p>
-<p><img src="https://raw.githubusercontent.com/Granvallen/granvallen.github.io/master/img/pixel_aa_2.png" style="zoom:50%;" /></p>
+<p><img src="https://raw.githubusercontent.com/Granvallen/granvallen.github.io/master/img/pixel_aa_2.png" style="zoom:80%;" title="图2" /></p>
 <p>从图2可以看到, 下边的纹理在放大$\frac{7}{3}$倍后, 采样后的像素色块的形状发生了扭曲. 但是又如上边的例子所示, 却可以无损地放大2倍. 观察一下最近邻插值的过程, 纹理放大后, 每个像素的颜色都被定义为距离最近的放大后原纹素的颜色.</p>
 <h1 id="解决思路"><a href="#解决思路" class="headerlink" title="解决思路"></a>解决思路</h1><p>上述提到的参考, 核心的解决思路其实是相同的. 如果牺牲在所难免, 那就只能尽可能减少牺牲. 事实上, 我们对于最近邻插值在靠近参考的原纹素中心附近的插值结果还是很满意的. 而落在那些参考纹素边缘的, 模棱两可的像素采样点(如图2中被虚线横穿的那些采样点)择需要被进一步调教. 具体来说, 我们希望这些像素的颜色是作为边缘两侧颜色的过渡(平滑). 这样就避免在放大或移动过程中, 因为边界线的移动, 导致这些像素颜色的跳变. 也就是类似图3(依然引自 Cole 文章)中的效果. </p>
-<p><img src="https://raw.githubusercontent.com/Granvallen/granvallen.github.io/master/img/pixel_aa_3.png" style="zoom:50%;" /></p>
+<p><img src="https://raw.githubusercontent.com/Granvallen/granvallen.github.io/master/img/pixel_aa_3.png" style="zoom:80%;" /></p>
 <p>毫无疑问, 这会损失一些”像素感”, 但好在这些平滑只发生在边界处, 通常占像素数量的比例很少. 那么接下来的问题就剩两个了, 如何找到这些边界处的采样像素, 以及如何确定这些采样点的颜色. 当然, 一个足够好的解决方法, 最好能同时解决这两个问题. </p>
 <p>在上面两个问题中, 相对容易确定的是后者. 对于采样点颜色的平滑, 依然可以借助插值. 作为应用最广泛的<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Bilinear_interpolation">双线性插值(Bilinear Interpolation)</a>正满足这种需求. 二维平面上, 在给定4个参考点的情况下, 双线性插值对于任意一个参考点范围内的采样点进行两个维度上共三次线性插值. 双线性插值得到的采样是平滑的, 因而非常不适合 Pixel Art 纹理, 而对于绝大部分其他类型的纹理来说, 则是兼具性能与效果的选择. 其也作为基础插值方法, 内置于各大引擎. 因为不算很复杂, 我在附录1中也简单解释了其插值原理及性质, 算是对<a href="https://granvallen.github.io/sift/">SIFT特征提取算法理解与实现</a>中提到的三线性插值做一个补充.</p>
 <p>解决第一个问题的思路最早在<a target="_blank" rel="noopener" href="https://csantosbh.wordpress.com/2014/01/25/manual-texture-filtering-for-pixelated-games-in-webgl/">Manual texture filtering for pixelated games in WebGL – Algorithmic Pensieve</a>这篇博客中被分享. 其提出的解决问题的思路可用下图来说明,</p>
