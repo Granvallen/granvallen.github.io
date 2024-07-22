@@ -98,8 +98,8 @@ x\\y
 }</script><p>代入归一化后的像素方格四个顶点坐标$(0,0)$, $(0,1)$, $(1, 0)$和$(1, 1)$, 得到经过对应纹理坐标为$(0, 0)$, $(\frac{\partial u}{\partial y}, \frac{\partial v}{\partial y})$, $(\frac{\partial u}{\partial x}, \frac{\partial v}{\partial x})$和$(\frac{\partial u}{\partial x}+\frac{\partial u}{\partial y}, \frac{\partial v}{\partial x}+\frac{\partial v}{\partial y})$. </p>
 <p>分别取四个坐标$u$, $v$两方向上的最大值与最小值相减, 就得到了包围盒的长与宽.</p>
 <script type="math/tex; mode=display">
-w = \left| \frac{\partial u}{\partial x} \right|+\left| \frac{\partial u}{\partial y} \right|</script><script type="math/tex; mode=display">
-h = \left| \frac{\partial v}{\partial x} \right|+\left| \frac{\partial v}{\partial y} \right|</script><script type="math/tex; mode=display">
+w \approx \left| \frac{\partial u}{\partial x} \right|+\left| \frac{\partial u}{\partial y} \right|</script><script type="math/tex; mode=display">
+h \approx \left| \frac{\partial v}{\partial x} \right|+\left| \frac{\partial v}{\partial y} \right|</script><script type="math/tex; mode=display">
 \boldsymbol{tpp}=\pmatrix{
 \frac{w}{tw}\\
 \frac{h}{th}
