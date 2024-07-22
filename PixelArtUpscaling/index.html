@@ -80,7 +80,7 @@ lu'&=saturate(\frac{1}{2\alpha}lu''+1-\frac{1}{2\alpha})+\frac{1}{2} \\
 <p>在比较少见的 Sprite 三维旋转的情况下, 前述方法会出现新的问题, 如图9所示,</p>
 <p><img src="https://raw.githubusercontent.com/Granvallen/granvallen.github.io/master/img/pixel_aa_9.gif" style="zoom:50%;" title="图9" /></p>
 <p>图9左侧为不做任何处理的效果, 最右侧为使用前述方法和固定 tpp 后的效果, 中间的在右侧基础上使用动态计算的 tpp. 从上图可以看到, 使用固定 tpp 值在旋转角度较大时, 依然会出现像素抖动. </p>
-<p>原因可以理解, 发生旋转后, 纹理上的纹素不再与像素轴对齐, 此时上述讨论方法就会失效. t3ssel8r 在视频中非常直观地展示了这个过程, 并重新对这个问题进行了建模. 其核心思路是<strong>用最小轴对称包围盒</strong>替代像素经过纹理映射后被旋转的采样区域进行采样, 如图12所示. </p>
+<p>原因可以理解, 发生旋转后, 纹理上的纹素不再与像素轴对齐, 此时上述讨论方法就会失效. t3ssel8r 在视频中非常直观地展示了这个过程, 并重新对这个问题进行了建模. 其核心思路是<strong>用最小轴对称包围盒</strong>替代像素经过纹理映射后被旋转的采样区域进行采样, 如图10所示. </p>
 <p><img src="https://raw.githubusercontent.com/Granvallen/granvallen.github.io/master/img/pixel_aa_10.png" style="zoom:50%;" title="图10" /></p>
 <p>重新回到纹理映射, 该过程把像素坐标$(x, y)$映射为归一化纹理坐标$(u,v)$, 可以用矩阵乘法进行描述,</p>
 <script type="math/tex; mode=display">
