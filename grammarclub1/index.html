@@ -11,8 +11,13 @@
   var isEmbedded = window.self !== window.top;
   var counterId = 'busuanzi_value_page_pv';
   var containerId = 'busuanzi_container_page_pv';
+  var busuanziLoaded = false;
+  var legacyResolved = false;
 
   function loadBusuanzi() {
+    if (busuanziLoaded) return;
+    busuanziLoaded = true;
+
     var script = document.createElement('script');
     script.src = '//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js';
     script.async = true;
@@ -49,6 +54,7 @@
       var value = document.getElementById(counterId);
       var container = document.getElementById(containerId);
 
+      legacyResolved = true;
       if (value) value.textContent = event.data.value;
       if (container) container.style.display = 'inline';
     });
@@ -58,6 +64,10 @@
     iframe.style.display = 'none';
     iframe.setAttribute('aria-hidden', 'true');
     document.body.appendChild(iframe);
+
+    window.setTimeout(function () {
+      if (!legacyResolved) loadBusuanzi();
+    }, 3000);
   } else {
     loadBusuanzi();
     postCountToParent();
