@@ -75,7 +75,7 @@
 })();
 </script></div><div class="post-content"><p>17年第一篇文章´_ゝ｀<br>其实这篇文章早之前已经完成了大部分, 谈谈自己对FFT的理解, 碍于种种原因没有发. 期间本站也崩过一次, 还是免费域名, 从tk换到了ml, 又能继续折腾了. </p>
 <span id="more"></span>
-<p>FFT或者说快速傅里叶变换算法是一类高效计算离散傅里叶变换的方法, 现在已经被广泛地应用于数字<br>信号处理系统中了, 对比前面讨论过的直接计算或者<a href="https://granvallen.github.io/goertzel/">Goertzel算法</a>都需要相当于正比于$N^{2}$的浮点运算量, 而FFT是一种正比于$N\log_{2}N$的离散傅里叶变换计算方法, 而且当N值越大, 这种计算方法的优势就越明显. 画了幅图可以感受下. </p>
+<p>FFT或者说快速傅里叶变换算法是一类高效计算离散傅里叶变换的方法, 现在已经被广泛地应用于数字<br>信号处理系统中了, 对比前面讨论过的直接计算或者<a target="_blank" rel="noopener" href="https://granvallen.github.io/goertzel/">Goertzel算法</a>都需要相当于正比于$N^{2}$的浮点运算量, 而FFT是一种正比于$N\log_{2}N$的离散傅里叶变换计算方法, 而且当N值越大, 这种计算方法的优势就越明显. 画了幅图可以感受下. </p>
 <p><img src="https://raw.githubusercontent.com/Granvallen/granvallen.github.io/master/img/%E5%AF%B9%E6%AF%94.PNG" width="1459" height="619" class="size-full" alt="DFT直接计算与FFT对比" style="zoom:50%" /> </p>
 <p>FFT是一类蝶形计算, 计算方式不复杂, 但要弄懂它的来龙去脉, 还是得费点功夫, 这也是我迟迟没下笔的原因之一. 这里重新理了下FFT的实现思路, 谈谈自己的理解, 同时希望对于这类算法能有触类旁通的益处. </p>
 <p>FFT算法按大类分成时间抽取与频率抽取的两种类型. 然后根据计算序列样值点个数可以分为一系列以n为基的计算方案, 这里重点讨论以2为基的计算过程, 也就是样值点$N=2^{n}$, 从中能方便快速的领悟FFT计算的原理. 至于处理更一般的情况, 一种方法是把N拆分成比如两个或更多的2的幂次个点的序列, 将N个点的DFT变成几组点DFT的和, 然后利用以2为基的FFT计算过程. </p>

@@ -3,11 +3,11 @@
   <title>Granvallen;Nest</title>
   
   <subtitle>面白く生きる</subtitle>
-  <link href="https://granvallen.github.io/atom.xml" rel="self"/>
+  <link href="https://granvallen.com/atom.xml" rel="self"/>
   
-  <link href="https://granvallen.github.io/"/>
+  <link href="https://granvallen.com/"/>
   <updated>2026-08-05T14:21:44.577Z</updated>
-  <id>https://granvallen.github.io/</id>
+  <id>https://granvallen.com/</id>
   
   <author>
     <name>Granvallen</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>好孩子不要看尼古喵喵</title>
-    <link href="https://granvallen.github.io/yanineko/"/>
-    <id>https://granvallen.github.io/yanineko/</id>
+    <link href="https://granvallen.com/yanineko/"/>
+    <id>https://granvallen.com/yanineko/</id>
     <published>2026-08-01T16:54:00.000Z</published>
     <updated>2026-08-05T14:21:44.577Z</updated>
     
@@ -34,19 +34,19 @@
     
     
     
-    <category term="ACGN" scheme="https://granvallen.github.io/categories/ACGN/"/>
+    <category term="ACGN" scheme="https://granvallen.com/categories/ACGN/"/>
     
-    <category term="动画" scheme="https://granvallen.github.io/categories/ACGN/%E5%8A%A8%E7%94%BB/"/>
+    <category term="动画" scheme="https://granvallen.com/categories/ACGN/%E5%8A%A8%E7%94%BB/"/>
     
     
-    <category term="动画" scheme="https://granvallen.github.io/tags/%E5%8A%A8%E7%94%BB/"/>
+    <category term="动画" scheme="https://granvallen.com/tags/%E5%8A%A8%E7%94%BB/"/>
     
   </entry>
   
   <entry>
     <title>如何实现一个简单易用可扩展的导表工具</title>
-    <link href="https://granvallen.github.io/konfi/"/>
-    <id>https://granvallen.github.io/konfi/</id>
+    <link href="https://granvallen.com/konfi/"/>
+    <id>https://granvallen.com/konfi/</id>
     <published>2025-10-01T14:14:00.000Z</published>
     <updated>2025-10-01T15:27:54.000Z</updated>
     
@@ -60,19 +60,19 @@
     
     
     
-    <category term="游戏开发" scheme="https://granvallen.github.io/categories/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/"/>
+    <category term="游戏开发" scheme="https://granvallen.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/"/>
     
     
-    <category term="游戏开发" scheme="https://granvallen.github.io/tags/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/"/>
+    <category term="游戏开发" scheme="https://granvallen.com/tags/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/"/>
     
-    <category term="Python" scheme="https://granvallen.github.io/tags/Python/"/>
+    <category term="Python" scheme="https://granvallen.com/tags/Python/"/>
     
   </entry>
   
   <entry>
     <title>それ町20周年与石黑正数的问答(译)</title>
-    <link href="https://granvallen.github.io/soremachi20/"/>
-    <id>https://granvallen.github.io/soremachi20/</id>
+    <link href="https://granvallen.com/soremachi20/"/>
+    <id>https://granvallen.com/soremachi20/</id>
     <published>2025-05-11T11:10:00.000Z</published>
     <updated>2025-05-11T13:50:38.694Z</updated>
     
@@ -89,25 +89,25 @@
     
     
     
-    <category term="ACGN" scheme="https://granvallen.github.io/categories/ACGN/"/>
+    <category term="ACGN" scheme="https://granvallen.com/categories/ACGN/"/>
     
-    <category term="漫画" scheme="https://granvallen.github.io/categories/ACGN/%E6%BC%AB%E7%94%BB/"/>
+    <category term="漫画" scheme="https://granvallen.com/categories/ACGN/%E6%BC%AB%E7%94%BB/"/>
     
     
-    <category term="Anli" scheme="https://granvallen.github.io/tags/Anli/"/>
+    <category term="Anli" scheme="https://granvallen.com/tags/Anli/"/>
     
-    <category term="不务正业" scheme="https://granvallen.github.io/tags/%E4%B8%8D%E5%8A%A1%E6%AD%A3%E4%B8%9A/"/>
+    <category term="不务正业" scheme="https://granvallen.com/tags/%E4%B8%8D%E5%8A%A1%E6%AD%A3%E4%B8%9A/"/>
     
-    <category term="漫画" scheme="https://granvallen.github.io/tags/%E6%BC%AB%E7%94%BB/"/>
+    <category term="漫画" scheme="https://granvallen.com/tags/%E6%BC%AB%E7%94%BB/"/>
     
-    <category term="翻译" scheme="https://granvallen.github.io/tags/%E7%BF%BB%E8%AF%91/"/>
+    <category term="翻译" scheme="https://granvallen.com/tags/%E7%BF%BB%E8%AF%91/"/>
     
   </entry>
   
   <entry>
     <title>漫画推荐《路边的藤井》</title>
-    <link href="https://granvallen.github.io/robonofujii/"/>
-    <id>https://granvallen.github.io/robonofujii/</id>
+    <link href="https://granvallen.com/robonofujii/"/>
+    <id>https://granvallen.com/robonofujii/</id>
     <published>2025-02-11T12:39:00.000Z</published>
     <updated>2025-02-11T13:44:57.142Z</updated>
     
@@ -118,23 +118,23 @@
     
     
     
-    <category term="ACGN" scheme="https://granvallen.github.io/categories/ACGN/"/>
+    <category term="ACGN" scheme="https://granvallen.com/categories/ACGN/"/>
     
-    <category term="漫画" scheme="https://granvallen.github.io/categories/ACGN/%E6%BC%AB%E7%94%BB/"/>
+    <category term="漫画" scheme="https://granvallen.com/categories/ACGN/%E6%BC%AB%E7%94%BB/"/>
     
     
-    <category term="Anli" scheme="https://granvallen.github.io/tags/Anli/"/>
+    <category term="Anli" scheme="https://granvallen.com/tags/Anli/"/>
     
-    <category term="不务正业" scheme="https://granvallen.github.io/tags/%E4%B8%8D%E5%8A%A1%E6%AD%A3%E4%B8%9A/"/>
+    <category term="不务正业" scheme="https://granvallen.com/tags/%E4%B8%8D%E5%8A%A1%E6%AD%A3%E4%B8%9A/"/>
     
-    <category term="漫画" scheme="https://granvallen.github.io/tags/%E6%BC%AB%E7%94%BB/"/>
+    <category term="漫画" scheme="https://granvallen.com/tags/%E6%BC%AB%E7%94%BB/"/>
     
   </entry>
   
   <entry>
     <title>复刻一个Pixel Art水体渲染实现</title>
-    <link href="https://granvallen.github.io/pixelartwater/"/>
-    <id>https://granvallen.github.io/pixelartwater/</id>
+    <link href="https://granvallen.com/pixelartwater/"/>
+    <id>https://granvallen.com/pixelartwater/</id>
     <published>2024-12-21T09:20:00.000Z</published>
     <updated>2025-10-01T14:12:12.000Z</updated>
     
@@ -145,27 +145,27 @@
     
     
     
-    <category term="Lab" scheme="https://granvallen.github.io/categories/Lab/"/>
+    <category term="Lab" scheme="https://granvallen.com/categories/Lab/"/>
     
-    <category term="计算机图形学" scheme="https://granvallen.github.io/categories/Lab/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/"/>
+    <category term="计算机图形学" scheme="https://granvallen.com/categories/Lab/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/"/>
     
-    <category term="游戏开发" scheme="https://granvallen.github.io/categories/Lab/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/"/>
+    <category term="游戏开发" scheme="https://granvallen.com/categories/Lab/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/"/>
     
     
-    <category term="计算机图形学" scheme="https://granvallen.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/"/>
+    <category term="计算机图形学" scheme="https://granvallen.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/"/>
     
-    <category term="Unity" scheme="https://granvallen.github.io/tags/Unity/"/>
+    <category term="Unity" scheme="https://granvallen.com/tags/Unity/"/>
     
-    <category term="PixelArt" scheme="https://granvallen.github.io/tags/PixelArt/"/>
+    <category term="PixelArt" scheme="https://granvallen.com/tags/PixelArt/"/>
     
-    <category term="游戏开发" scheme="https://granvallen.github.io/tags/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/"/>
+    <category term="游戏开发" scheme="https://granvallen.com/tags/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/"/>
     
   </entry>
   
   <entry>
     <title>其实是一篇安利文...</title>
-    <link href="https://granvallen.github.io/karakidakenokosyokurasi/"/>
-    <id>https://granvallen.github.io/karakidakenokosyokurasi/</id>
+    <link href="https://granvallen.com/karakidakenokosyokurasi/"/>
+    <id>https://granvallen.com/karakidakenokosyokurasi/</id>
     <published>2024-09-23T12:46:00.000Z</published>
     <updated>2024-09-23T13:09:08.429Z</updated>
     
@@ -176,19 +176,19 @@
     
     
     
-    <category term="ACGN" scheme="https://granvallen.github.io/categories/ACGN/"/>
+    <category term="ACGN" scheme="https://granvallen.com/categories/ACGN/"/>
     
-    <category term="漫画" scheme="https://granvallen.github.io/categories/ACGN/%E6%BC%AB%E7%94%BB/"/>
+    <category term="漫画" scheme="https://granvallen.com/categories/ACGN/%E6%BC%AB%E7%94%BB/"/>
     
     
-    <category term="读后感" scheme="https://granvallen.github.io/tags/%E8%AF%BB%E5%90%8E%E6%84%9F/"/>
+    <category term="读后感" scheme="https://granvallen.com/tags/%E8%AF%BB%E5%90%8E%E6%84%9F/"/>
     
   </entry>
   
   <entry>
     <title>浅谈Pixel Art缩放及抗锯齿问题</title>
-    <link href="https://granvallen.github.io/PixelArtUpscaling/"/>
-    <id>https://granvallen.github.io/PixelArtUpscaling/</id>
+    <link href="https://granvallen.com/PixelArtUpscaling/"/>
+    <id>https://granvallen.com/PixelArtUpscaling/</id>
     <published>2024-07-14T06:07:00.000Z</published>
     <updated>2025-10-01T14:11:59.000Z</updated>
     
@@ -200,27 +200,27 @@
     
     
     
-    <category term="Lab" scheme="https://granvallen.github.io/categories/Lab/"/>
+    <category term="Lab" scheme="https://granvallen.com/categories/Lab/"/>
     
-    <category term="计算机图形学" scheme="https://granvallen.github.io/categories/Lab/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/"/>
+    <category term="计算机图形学" scheme="https://granvallen.com/categories/Lab/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/"/>
     
-    <category term="游戏开发" scheme="https://granvallen.github.io/categories/Lab/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/"/>
+    <category term="游戏开发" scheme="https://granvallen.com/categories/Lab/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/"/>
     
     
-    <category term="计算机图形学" scheme="https://granvallen.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/"/>
+    <category term="计算机图形学" scheme="https://granvallen.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/"/>
     
-    <category term="Unity" scheme="https://granvallen.github.io/tags/Unity/"/>
+    <category term="Unity" scheme="https://granvallen.com/tags/Unity/"/>
     
-    <category term="PixelArt" scheme="https://granvallen.github.io/tags/PixelArt/"/>
+    <category term="PixelArt" scheme="https://granvallen.com/tags/PixelArt/"/>
     
-    <category term="游戏开发" scheme="https://granvallen.github.io/tags/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/"/>
+    <category term="游戏开发" scheme="https://granvallen.com/tags/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/"/>
     
   </entry>
   
   <entry>
     <title>如何用Python开发Unity</title>
-    <link href="https://granvallen.github.io/unitypython/"/>
-    <id>https://granvallen.github.io/unitypython/</id>
+    <link href="https://granvallen.com/unitypython/"/>
+    <id>https://granvallen.com/unitypython/</id>
     <published>2023-05-07T12:11:00.000Z</published>
     <updated>2023-05-07T12:43:23.000Z</updated>
     
@@ -232,25 +232,25 @@
     
     
     
-    <category term="Coding" scheme="https://granvallen.github.io/categories/Coding/"/>
+    <category term="Coding" scheme="https://granvallen.com/categories/Coding/"/>
     
-    <category term="Unity" scheme="https://granvallen.github.io/categories/Coding/Unity/"/>
+    <category term="Unity" scheme="https://granvallen.com/categories/Coding/Unity/"/>
     
-    <category term="Python" scheme="https://granvallen.github.io/categories/Coding/Unity/Python/"/>
+    <category term="Python" scheme="https://granvallen.com/categories/Coding/Unity/Python/"/>
     
     
-    <category term="Unity" scheme="https://granvallen.github.io/tags/Unity/"/>
+    <category term="Unity" scheme="https://granvallen.com/tags/Unity/"/>
     
-    <category term="Python" scheme="https://granvallen.github.io/tags/Python/"/>
+    <category term="Python" scheme="https://granvallen.com/tags/Python/"/>
     
-    <category term="C#" scheme="https://granvallen.github.io/tags/C/"/>
+    <category term="C#" scheme="https://granvallen.com/tags/C/"/>
     
   </entry>
   
   <entry>
     <title>聊聊我对P5R的感受与观察</title>
-    <link href="https://granvallen.github.io/persona5/"/>
-    <id>https://granvallen.github.io/persona5/</id>
+    <link href="https://granvallen.com/persona5/"/>
+    <id>https://granvallen.com/persona5/</id>
     <published>2021-02-17T06:33:00.000Z</published>
     <updated>2024-07-22T13:02:25.891Z</updated>
     
@@ -262,21 +262,21 @@
     
     
     
-    <category term="ACGN" scheme="https://granvallen.github.io/categories/ACGN/"/>
+    <category term="ACGN" scheme="https://granvallen.com/categories/ACGN/"/>
     
-    <category term="游戏" scheme="https://granvallen.github.io/categories/ACGN/%E6%B8%B8%E6%88%8F/"/>
+    <category term="游戏" scheme="https://granvallen.com/categories/ACGN/%E6%B8%B8%E6%88%8F/"/>
     
     
-    <category term="游戏" scheme="https://granvallen.github.io/tags/%E6%B8%B8%E6%88%8F/"/>
+    <category term="游戏" scheme="https://granvallen.com/tags/%E6%B8%B8%E6%88%8F/"/>
     
-    <category term="P5R" scheme="https://granvallen.github.io/tags/P5R/"/>
+    <category term="P5R" scheme="https://granvallen.com/tags/P5R/"/>
     
   </entry>
   
   <entry>
     <title>点灯游戏与数学之美</title>
-    <link href="https://granvallen.github.io/lightoutgame/"/>
-    <id>https://granvallen.github.io/lightoutgame/</id>
+    <link href="https://granvallen.com/lightoutgame/"/>
+    <id>https://granvallen.com/lightoutgame/</id>
     <published>2020-02-20T06:33:00.000Z</published>
     <updated>2020-03-11T08:10:06.000Z</updated>
     
@@ -288,23 +288,23 @@
     
     
     
-    <category term="Lab" scheme="https://granvallen.github.io/categories/Lab/"/>
+    <category term="Lab" scheme="https://granvallen.com/categories/Lab/"/>
     
-    <category term="数学" scheme="https://granvallen.github.io/categories/Lab/%E6%95%B0%E5%AD%A6/"/>
+    <category term="数学" scheme="https://granvallen.com/categories/Lab/%E6%95%B0%E5%AD%A6/"/>
     
     
-    <category term="Mathematica" scheme="https://granvallen.github.io/tags/Mathematica/"/>
+    <category term="Mathematica" scheme="https://granvallen.com/tags/Mathematica/"/>
     
-    <category term="C++" scheme="https://granvallen.github.io/tags/C/"/>
+    <category term="C++" scheme="https://granvallen.com/tags/C/"/>
     
-    <category term="oj" scheme="https://granvallen.github.io/tags/oj/"/>
+    <category term="oj" scheme="https://granvallen.com/tags/oj/"/>
     
   </entry>
   
   <entry>
     <title>CodeCraft 2019</title>
-    <link href="https://granvallen.github.io/codecraft2019/"/>
-    <id>https://granvallen.github.io/codecraft2019/</id>
+    <link href="https://granvallen.com/codecraft2019/"/>
+    <id>https://granvallen.com/codecraft2019/</id>
     <published>2019-06-22T16:12:31.000Z</published>
     <updated>2021-02-24T06:23:10.000Z</updated>
     
@@ -316,21 +316,21 @@
     
     
     
-    <category term="Coding" scheme="https://granvallen.github.io/categories/Coding/"/>
+    <category term="Coding" scheme="https://granvallen.com/categories/Coding/"/>
     
-    <category term="C/C++" scheme="https://granvallen.github.io/categories/Coding/C-C/"/>
+    <category term="C/C++" scheme="https://granvallen.com/categories/Coding/C-C/"/>
     
     
-    <category term="C/C++" scheme="https://granvallen.github.io/tags/C-C/"/>
+    <category term="C/C++" scheme="https://granvallen.com/tags/C-C/"/>
     
-    <category term="CodeCraft" scheme="https://granvallen.github.io/tags/CodeCraft/"/>
+    <category term="CodeCraft" scheme="https://granvallen.com/tags/CodeCraft/"/>
     
   </entry>
   
   <entry>
     <title>从《星游记》出发聊聊所见所想</title>
-    <link href="https://granvallen.github.io/xingyouji/"/>
-    <id>https://granvallen.github.io/xingyouji/</id>
+    <link href="https://granvallen.com/xingyouji/"/>
+    <id>https://granvallen.com/xingyouji/</id>
     <published>2019-06-14T16:13:00.000Z</published>
     <updated>2026-08-01T16:55:20.424Z</updated>
     
@@ -341,21 +341,21 @@
     
     
     
-    <category term="ACGN" scheme="https://granvallen.github.io/categories/ACGN/"/>
+    <category term="ACGN" scheme="https://granvallen.com/categories/ACGN/"/>
     
-    <category term="动画" scheme="https://granvallen.github.io/categories/ACGN/%E5%8A%A8%E7%94%BB/"/>
+    <category term="动画" scheme="https://granvallen.com/categories/ACGN/%E5%8A%A8%E7%94%BB/"/>
     
     
-    <category term="Anli" scheme="https://granvallen.github.io/tags/Anli/"/>
+    <category term="Anli" scheme="https://granvallen.com/tags/Anli/"/>
     
-    <category term="动画" scheme="https://granvallen.github.io/tags/%E5%8A%A8%E7%94%BB/"/>
+    <category term="动画" scheme="https://granvallen.com/tags/%E5%8A%A8%E7%94%BB/"/>
     
   </entry>
   
   <entry>
     <title>读《自新世界》</title>
-    <link href="https://granvallen.github.io/zixinshijie/"/>
-    <id>https://granvallen.github.io/zixinshijie/</id>
+    <link href="https://granvallen.com/zixinshijie/"/>
+    <id>https://granvallen.com/zixinshijie/</id>
     <published>2019-04-24T11:31:00.000Z</published>
     <updated>2021-02-24T06:23:10.000Z</updated>
     
@@ -370,19 +370,19 @@
     
     
     
-    <category term="ACGN" scheme="https://granvallen.github.io/categories/ACGN/"/>
+    <category term="ACGN" scheme="https://granvallen.com/categories/ACGN/"/>
     
-    <category term="小说" scheme="https://granvallen.github.io/categories/ACGN/%E5%B0%8F%E8%AF%B4/"/>
+    <category term="小说" scheme="https://granvallen.com/categories/ACGN/%E5%B0%8F%E8%AF%B4/"/>
     
     
-    <category term="读后感" scheme="https://granvallen.github.io/tags/%E8%AF%BB%E5%90%8E%E6%84%9F/"/>
+    <category term="读后感" scheme="https://granvallen.com/tags/%E8%AF%BB%E5%90%8E%E6%84%9F/"/>
     
   </entry>
   
   <entry>
     <title>SIFT特征提取算法理解与实现</title>
-    <link href="https://granvallen.github.io/sift/"/>
-    <id>https://granvallen.github.io/sift/</id>
+    <link href="https://granvallen.com/sift/"/>
+    <id>https://granvallen.com/sift/</id>
     <published>2019-01-20T12:27:00.000Z</published>
     <updated>2021-02-24T06:23:10.000Z</updated>
     
@@ -393,23 +393,23 @@
     
     
     
-    <category term="Lab" scheme="https://granvallen.github.io/categories/Lab/"/>
+    <category term="Lab" scheme="https://granvallen.com/categories/Lab/"/>
     
-    <category term="计算机视觉" scheme="https://granvallen.github.io/categories/Lab/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/"/>
+    <category term="计算机视觉" scheme="https://granvallen.com/categories/Lab/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/"/>
     
     
-    <category term="C/C++" scheme="https://granvallen.github.io/tags/C-C/"/>
+    <category term="C/C++" scheme="https://granvallen.com/tags/C-C/"/>
     
-    <category term="Matlab" scheme="https://granvallen.github.io/tags/Matlab/"/>
+    <category term="Matlab" scheme="https://granvallen.com/tags/Matlab/"/>
     
-    <category term="SIFT" scheme="https://granvallen.github.io/tags/SIFT/"/>
+    <category term="SIFT" scheme="https://granvallen.com/tags/SIFT/"/>
     
   </entry>
   
   <entry>
     <title>写在研究生生活之前</title>
-    <link href="https://granvallen.github.io/nichijou180918/"/>
-    <id>https://granvallen.github.io/nichijou180918/</id>
+    <link href="https://granvallen.com/nichijou180918/"/>
+    <id>https://granvallen.com/nichijou180918/</id>
     <published>2018-09-18T15:12:00.000Z</published>
     <updated>2021-02-24T05:56:09.000Z</updated>
     
@@ -420,17 +420,17 @@
     
     
     
-    <category term="Nichijou" scheme="https://granvallen.github.io/categories/Nichijou/"/>
+    <category term="Nichijou" scheme="https://granvallen.com/categories/Nichijou/"/>
     
-    <category term="杂文" scheme="https://granvallen.github.io/categories/Nichijou/%E6%9D%82%E6%96%87/"/>
+    <category term="杂文" scheme="https://granvallen.com/categories/Nichijou/%E6%9D%82%E6%96%87/"/>
     
     
   </entry>
   
   <entry>
     <title>浅谈线性回归</title>
-    <link href="https://granvallen.github.io/linearregression/"/>
-    <id>https://granvallen.github.io/linearregression/</id>
+    <link href="https://granvallen.com/linearregression/"/>
+    <id>https://granvallen.com/linearregression/</id>
     <published>2018-04-30T07:30:00.000Z</published>
     <updated>2021-02-24T06:23:10.000Z</updated>
     
@@ -441,19 +441,19 @@
     
     
     
-    <category term="Lab" scheme="https://granvallen.github.io/categories/Lab/"/>
+    <category term="Lab" scheme="https://granvallen.com/categories/Lab/"/>
     
-    <category term="统计学习" scheme="https://granvallen.github.io/categories/Lab/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0/"/>
+    <category term="统计学习" scheme="https://granvallen.com/categories/Lab/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0/"/>
     
     
-    <category term="数理统计" scheme="https://granvallen.github.io/tags/%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/"/>
+    <category term="数理统计" scheme="https://granvallen.com/tags/%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/"/>
     
   </entry>
   
   <entry>
     <title>用Matlab处理Excel</title>
-    <link href="https://granvallen.github.io/matlabexcel/"/>
-    <id>https://granvallen.github.io/matlabexcel/</id>
+    <link href="https://granvallen.com/matlabexcel/"/>
+    <id>https://granvallen.com/matlabexcel/</id>
     <published>2018-02-26T04:01:00.000Z</published>
     <updated>2021-02-24T06:23:10.000Z</updated>
     
@@ -466,21 +466,21 @@
     
     
     
-    <category term="Coding" scheme="https://granvallen.github.io/categories/Coding/"/>
+    <category term="Coding" scheme="https://granvallen.com/categories/Coding/"/>
     
-    <category term="Matlab" scheme="https://granvallen.github.io/categories/Coding/Matlab/"/>
+    <category term="Matlab" scheme="https://granvallen.com/categories/Coding/Matlab/"/>
     
     
-    <category term="不务正业" scheme="https://granvallen.github.io/tags/%E4%B8%8D%E5%8A%A1%E6%AD%A3%E4%B8%9A/"/>
+    <category term="不务正业" scheme="https://granvallen.com/tags/%E4%B8%8D%E5%8A%A1%E6%AD%A3%E4%B8%9A/"/>
     
-    <category term="Matlab" scheme="https://granvallen.github.io/tags/Matlab/"/>
+    <category term="Matlab" scheme="https://granvallen.com/tags/Matlab/"/>
     
   </entry>
   
   <entry>
     <title>关于采样的总结</title>
-    <link href="https://granvallen.github.io/sampling/"/>
-    <id>https://granvallen.github.io/sampling/</id>
+    <link href="https://granvallen.com/sampling/"/>
+    <id>https://granvallen.com/sampling/</id>
     <published>2018-02-15T15:02:00.000Z</published>
     <updated>2021-02-24T06:23:10.000Z</updated>
     
@@ -491,23 +491,23 @@
     
     
     
-    <category term="Lab" scheme="https://granvallen.github.io/categories/Lab/"/>
+    <category term="Lab" scheme="https://granvallen.com/categories/Lab/"/>
     
-    <category term="信号处理" scheme="https://granvallen.github.io/categories/Lab/%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/"/>
+    <category term="信号处理" scheme="https://granvallen.com/categories/Lab/%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/"/>
     
-    <category term="DSP" scheme="https://granvallen.github.io/categories/Lab/%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/DSP/"/>
+    <category term="DSP" scheme="https://granvallen.com/categories/Lab/%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/DSP/"/>
     
     
-    <category term="DFT" scheme="https://granvallen.github.io/tags/DFT/"/>
+    <category term="DFT" scheme="https://granvallen.com/tags/DFT/"/>
     
-    <category term="FFT" scheme="https://granvallen.github.io/tags/FFT/"/>
+    <category term="FFT" scheme="https://granvallen.com/tags/FFT/"/>
     
   </entry>
   
   <entry>
     <title>如何使用LaTeX绘图</title>
-    <link href="https://granvallen.github.io/latextikz/"/>
-    <id>https://granvallen.github.io/latextikz/</id>
+    <link href="https://granvallen.com/latextikz/"/>
+    <id>https://granvallen.com/latextikz/</id>
     <published>2017-04-18T14:55:00.000Z</published>
     <updated>2021-02-24T06:23:10.000Z</updated>
     
@@ -519,21 +519,21 @@
     
     
     
-    <category term="Note" scheme="https://granvallen.github.io/categories/Note/"/>
+    <category term="Note" scheme="https://granvallen.com/categories/Note/"/>
     
-    <category term="LaTeX" scheme="https://granvallen.github.io/categories/Note/LaTeX/"/>
+    <category term="LaTeX" scheme="https://granvallen.com/categories/Note/LaTeX/"/>
     
     
-    <category term="LaTeX" scheme="https://granvallen.github.io/tags/LaTeX/"/>
+    <category term="LaTeX" scheme="https://granvallen.com/tags/LaTeX/"/>
     
-    <category term="TikZ" scheme="https://granvallen.github.io/tags/TikZ/"/>
+    <category term="TikZ" scheme="https://granvallen.com/tags/TikZ/"/>
     
   </entry>
   
   <entry>
     <title>《语法俱乐部》笔记 3.高级篇</title>
-    <link href="https://granvallen.github.io/grammarclub3/"/>
-    <id>https://granvallen.github.io/grammarclub3/</id>
+    <link href="https://granvallen.com/grammarclub3/"/>
+    <id>https://granvallen.com/grammarclub3/</id>
     <published>2017-03-11T22:32:00.000Z</published>
     <updated>2021-02-24T06:23:10.000Z</updated>
     
@@ -545,12 +545,12 @@
     
     
     
-    <category term="Note" scheme="https://granvallen.github.io/categories/Note/"/>
+    <category term="Note" scheme="https://granvallen.com/categories/Note/"/>
     
-    <category term="English" scheme="https://granvallen.github.io/categories/Note/English/"/>
+    <category term="English" scheme="https://granvallen.com/categories/Note/English/"/>
     
     
-    <category term="语法俱乐部" scheme="https://granvallen.github.io/tags/%E8%AF%AD%E6%B3%95%E4%BF%B1%E4%B9%90%E9%83%A8/"/>
+    <category term="语法俱乐部" scheme="https://granvallen.com/tags/%E8%AF%AD%E6%B3%95%E4%BF%B1%E4%B9%90%E9%83%A8/"/>
     
   </entry>
   
