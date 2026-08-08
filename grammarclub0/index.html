@@ -7,70 +7,41 @@
   })();
 </script><script type="text/javascript" src="//cdn.jsdelivr.net/npm/clipboard/dist/clipboard.min.js"></script><script type="text/javascript" src="//cdn.jsdelivr.net/gh/codeseven/toastr/build/toastr.min.js"></script><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/codeseven/toastr/build/toastr.min.css"><meta name="generator" content="Hexo 5.4.2"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">《语法俱乐部》笔记 0.预告篇</h1><a id="logo" href="/.">Granvallen;Nest</a><p class="description">面白く生きる</p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/guestbook/"><i class="fa fa-comments"> 留言</i></a><a href="/about/"><i class="fa fa-terminal"> 关于</i></a><a href="/atom.xml"><i class="fa fa-rss"> 订阅</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-4-4"><div class="content_container"><div class="post"><h1 class="post-title">《语法俱乐部》笔记 0.预告篇</h1><div class="post-meta">Aug 22, 2016<span> | </span><span class="category"><a href="/categories/Note/">Note</a><a href="/categories/Note/English/">English</a></span><span class="post-time"><span class="post-meta-item-text"> | </span><span class="post-meta-item-icon"><i class="fa fa-keyboard-o"></i><span class="post-count"> 1,009</span><span class="post-meta-item-text"> 字</span></span></span><span id="busuanzi_container_page_pv"> | <span id="busuanzi_value_page_pv"></span><span> 阅读</span></span><script>(function () {
   var legacyOrigin = 'https://granvallen.github.io'.replace(/\/$/, '');
-  var currentOrigin = window.location.origin;
-  var isEmbedded = window.self !== window.top;
-  var counterId = 'busuanzi_value_page_pv';
-  var containerId = 'busuanzi_container_page_pv';
-  var busuanziLoaded = false;
-  var legacyResolved = false;
+  var counter = document.getElementById('busuanzi_value_page_pv');
 
-  function loadBusuanzi() {
-    if (busuanziLoaded) return;
-    busuanziLoaded = true;
+  if (!legacyOrigin || window.location.origin === legacyOrigin) {
+    if (window.self !== window.top) {
+      new MutationObserver(function (_, observer) {
+        if (!counter.textContent) return;
+        window.parent.postMessage({
+          type: 'busuanzi-page-pv',
+          path: window.location.pathname,
+          value: counter.textContent
+        }, '*');
+        observer.disconnect();
+      }).observe(counter, { childList: true });
+    }
 
     var script = document.createElement('script');
     script.src = '//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js';
     script.async = true;
     document.head.appendChild(script);
+    return;
   }
 
-  function postCountToParent() {
-    if (!isEmbedded || currentOrigin !== legacyOrigin) return;
+  window.addEventListener('message', function (event) {
+    if (event.origin !== legacyOrigin || !event.data) return;
+    if (event.data.type !== 'busuanzi-page-pv') return;
+    if (event.data.path !== window.location.pathname) return;
+    counter.textContent = event.data.value;
+  });
 
-    var attempts = 0;
-    var timer = window.setInterval(function () {
-      var value = document.getElementById(counterId);
-      attempts += 1;
-
-      if (value && value.textContent) {
-        window.parent.postMessage({
-          type: 'busuanzi-page-pv',
-          path: window.location.pathname,
-          value: value.textContent
-        }, '*');
-        window.clearInterval(timer);
-      } else if (attempts > 100) {
-        window.clearInterval(timer);
-      }
-    }, 100);
-  }
-
-  if (legacyOrigin && currentOrigin !== legacyOrigin && !isEmbedded) {
-    window.addEventListener('message', function (event) {
-      if (event.origin !== legacyOrigin) return;
-      if (!event.data || event.data.type !== 'busuanzi-page-pv') return;
-      if (event.data.path !== window.location.pathname) return;
-
-      var value = document.getElementById(counterId);
-      var container = document.getElementById(containerId);
-
-      legacyResolved = true;
-      if (value) value.textContent = event.data.value;
-      if (container) container.style.display = 'inline';
-    });
-
+  if (window.location.hash !== '#busuanzi-legacy') {
     var iframe = document.createElement('iframe');
-    iframe.src = legacyOrigin + window.location.pathname + window.location.search;
-    iframe.style.display = 'none';
+    iframe.src = legacyOrigin + window.location.pathname + '#busuanzi-legacy';
+    iframe.hidden = true;
     iframe.setAttribute('aria-hidden', 'true');
     document.body.appendChild(iframe);
-
-    window.setTimeout(function () {
-      if (!legacyResolved) loadBusuanzi();
-    }, 3000);
-  } else {
-    loadBusuanzi();
-    postCountToParent();
   }
 })();
 </script></div><div class="post-content"><p>前段时间自食了英文图书《小王子》, 配合着另一本译本狼狈地读完了, 还算愉快的阅读体验. 内容而言, 让我感到相见恨晚, 狂热了一阵子, 还特地看了同名电影, 但今天的主角并不是他. </p>
