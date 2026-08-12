@@ -1721,11 +1721,11 @@ em.search-keyword {
   text-shadow: 0;
 }
 
-.moments-comments.moments-locked > .tk-comments > .tk-submit {
+.moments-comments.moments-locked .tk-comments > .tk-submit {
   display: none;
 }
 
-.moments-comments.moments-locked > .tk-comments > .tk-comments-container::before {
+.moments-comments.moments-locked .tk-comments > .tk-comments-container::before {
   content: "仅博主可发布动态，访客可以回复已有动态。";
   display: block;
   margin: 1rem 0;

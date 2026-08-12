@@ -1,18 +1,19 @@
 (function () {
   'use strict';
 
-  var comments = document.getElementById('tcomment');
+  // Twikoo 会替换 #tcomment 本身，因此登录状态类必须放在外层容器上。
+  var comments = document.querySelector('.moments-comments');
   if (!comments) return;
 
   function updateComposerVisibility() {
-    // Twikoo 非腾讯云环境在管理员登录后保存此令牌，退出时会移除。
-    var isAdmin = Boolean(localStorage.getItem('twikoo-access-token'));
+    // 以 Twikoo 实际渲染出的管理面板为准，避免残留或过期令牌误判登录。
+    var isAdmin = Boolean(comments.querySelector('.tk-panel-logout'));
     comments.classList.toggle('moments-locked', !isAdmin);
   }
 
   updateComposerVisibility();
-  window.addEventListener('storage', updateComposerVisibility);
-
-  // 登录和退出发生在 Twikoo 弹窗内，同页 localStorage 变化不会触发 storage 事件。
-  window.setInterval(updateComposerVisibility, 1000);
+  new MutationObserver(updateComposerVisibility).observe(comments, {
+    childList: true,
+    subtree: true
+  });
 })();
