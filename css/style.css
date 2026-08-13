@@ -1726,7 +1726,7 @@ em.search-keyword {
 }
 
 .moments-comments.moments-locked .tk-comments > .tk-comments-container::before {
-  content: "仅博主可发布动态，访客可以回复已有动态。";
+  content: "反正没人留言, 不如把留言系统当动态用, 时不时发点疯言疯语...";
   display: block;
   margin: 1rem 0;
   padding: 0.75rem 1rem;
