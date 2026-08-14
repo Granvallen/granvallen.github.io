@@ -1726,7 +1726,7 @@ em.search-keyword {
 }
 
 .moments-comments.moments-locked .tk-comments > .tk-comments-container::before {
-  content: "暂时把评论系统当动态用了...";
+  content: "暂时把评论系统当动态用好了...";
   display: block;
   margin: 1rem 0;
   padding: 0.75rem 1rem;
@@ -1734,4 +1734,34 @@ em.search-keyword {
   background: #f7f7f7;
   border-left: 3px solid #ddd;
   border-radius: 2px;
+}
+
+.moments-embed {
+  margin: 0.75rem 0;
+  width: 100%;
+}
+
+.moments-embed iframe {
+  display: block;
+  width: 100%;
+  border: 0;
+}
+
+.moments-embed--bilibili,
+.moments-embed--youtube {
+  max-width: 720px;
+  aspect-ratio: 16/9;
+}
+
+.moments-embed--bilibili iframe,
+.moments-embed--youtube iframe {
+  height: 100%;
+}
+
+.moments-embed--netease {
+  max-width: 330px;
+}
+
+.moments-embed--netease iframe {
+  height: 86px;
 }
