@@ -61,18 +61,24 @@
   }
 
   function getNetEaseEmbed(url) {
-    if (url.hostname.toLowerCase() !== 'music.163.com' || url.pathname !== '/outchain/player') {
-      return null;
+    if (url.hostname.toLowerCase() !== 'music.163.com') return null;
+
+    var path = url.pathname;
+    var params = url.searchParams;
+    if (url.hash.indexOf('#/') === 0) {
+      var hashUrl = new URL(url.hash.slice(1), 'https://music.163.com');
+      path = hashUrl.pathname;
+      params = hashUrl.searchParams;
     }
 
-    var type = url.searchParams.get('type');
-    var id = url.searchParams.get('id');
+    var type = path === '/song' ? '2' : path === '/playlist' ? '0' : params.get('type');
+    var id = params.get('id');
     if ((type !== '0' && type !== '2') || !/^\d+$/.test(id || '')) return null;
 
     var embed = new URL('https://music.163.com/outchain/player');
     embed.searchParams.set('type', type);
     embed.searchParams.set('id', id);
-    embed.searchParams.set('auto', url.searchParams.get('auto') === '1' ? '1' : '0');
+    embed.searchParams.set('auto', params.get('auto') === '1' ? '1' : '0');
     embed.searchParams.set('height', '66');
 
     return { provider: 'netease', url: embed.href, title: '网易云音乐' };
@@ -109,26 +115,25 @@
   }
 
   function renderEmbeds() {
-    // 只转换博主发布的顶层动态；回复中的标记保持普通链接。
+    // 只转换博主顶层动态中单独成段的裸链接。
     var links = comments.querySelectorAll(
       '.tk-comments-container > .tk-comment.tk-master > .tk-main > .tk-content a'
     );
 
     Array.prototype.forEach.call(links, function (link) {
-      var marker = link.textContent.trim().toLowerCase();
-      if (marker !== 'embed' && marker !== 'iframe' && marker !== '嵌入') return;
+      var paragraph = link.parentElement;
+      var text = link.textContent.trim();
+      if (
+        !paragraph ||
+        paragraph.tagName !== 'P' ||
+        paragraph.children.length !== 1 ||
+        paragraph.textContent.trim() !== text ||
+        !/^https:\/\/\S+$/i.test(text)
+      ) return;
 
       var embed = parseEmbed(link.getAttribute('href'));
       if (!embed) return;
-
-      var paragraph = link.parentElement;
-      var target = paragraph &&
-        paragraph.tagName === 'P' &&
-        paragraph.children.length === 1 &&
-        paragraph.textContent.trim().toLowerCase() === marker
-        ? paragraph
-        : link;
-      target.replaceWith(createEmbed(embed));
+      paragraph.replaceWith(createEmbed(embed));
     });
   }
 

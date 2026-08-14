@@ -1736,6 +1736,11 @@ em.search-keyword {
   border-radius: 2px;
 }
 
+.moments-comments .tk-comments-container > .tk-comment > .tk-main > .tk-content {
+  max-height: none;
+  overflow: visible;
+}
+
 .moments-embed {
   margin: 0.75rem 0;
   width: 100%;
