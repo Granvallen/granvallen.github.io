@@ -32,6 +32,12 @@ body {
   font-size: 14px;
 }
 
+/* Optional page grid: delete this block to restore the plain white background. */
+body {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
 .body_container {
   padding: 0 60px;
   max-width: 1150px;
@@ -599,6 +605,62 @@ pre {
     -webkit-transform: scale(1.4, 3.2);
     -moz-transform: scale(1.4, 3.2);
     transform: scale(1.4, 3.2);
+  }
+}
+/* Simple circular back-to-top button */
+#rocket {
+  display: none;
+}
+
+@media print, screen and (min-width: 48em) {
+  #rocket,
+  #rocket:hover,
+  #rocket.launch {
+    right: 40px;
+    bottom: 40px;
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.86);
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.14);
+    color: #555;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    z-index: 20;
+    transition: visibility 0.25s, opacity 0.25s, transform 0.25s, background-color 0.2s, color 0.2s;
+  }
+  #rocket {
+    display: flex;
+    transform: translateY(8px);
+  }
+  #rocket i,
+  #rocket:hover i,
+  #rocket.launch i {
+    display: block;
+    height: auto;
+    margin: 0;
+    background: none;
+    opacity: 1;
+    font-size: 27px;
+    line-height: 1;
+    transform: none;
+    animation: none;
+  }
+  #rocket:hover {
+    background-color: #fff;
+    color: #222;
+    transform: translateY(-2px);
+  }
+  #rocket.show {
+    transform: translateY(0);
+  }
+  #rocket.launch {
+    opacity: 0;
+    transform: translateY(-24px);
+    pointer-events: none;
   }
 }
 /* *******************************************************
