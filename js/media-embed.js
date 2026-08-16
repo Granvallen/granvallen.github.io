@@ -78,15 +78,25 @@
     return { provider: 'netease', url: embed.href, title: '网易云音乐' };
   }
 
-  function parseEmbed(href) {
-    var url;
+  function parseUrl(href) {
     try {
-      url = new URL(href, window.location.href);
+      var url = new URL(href, window.location.href);
     } catch (_) {
       return null;
     }
     if (url.protocol !== 'https:') return null;
+    return url;
+  }
+
+  function parseEmbed(href) {
+    var url = parseUrl(href);
+    if (!url) return null;
     return getBilibiliEmbed(url) || getYouTubeEmbed(url) || getNetEaseEmbed(url);
+  }
+
+  function parseNetEaseEmbed(href) {
+    var url = parseUrl(href);
+    return url ? getNetEaseEmbed(url) : null;
   }
 
   function createEmbed(embed) {
@@ -114,11 +124,11 @@
     return meaningfulNodes.length === 1 && meaningfulNodes[0] === link;
   }
 
-  function renderLinks(links, standaloneOnly) {
+  function renderLinks(links, standaloneOnly, parser) {
     Array.prototype.forEach.call(links, function (link) {
       var standalone = isStandaloneLink(link);
       if (standaloneOnly && !standalone) return;
-      var embed = parseEmbed(link.getAttribute('href'));
+      var embed = parser(link.getAttribute('href'));
       if (!embed) return;
       var rendered = createEmbed(embed);
       if (standalone) {
@@ -129,7 +139,7 @@
     });
   }
 
-  renderLinks(document.querySelectorAll('.post-content a[href]'), false);
+  renderLinks(document.querySelectorAll('.post-content a[href]'), false, parseNetEaseEmbed);
 
   var comments = document.querySelector('.moments-comments');
   if (!comments) return;
@@ -137,7 +147,7 @@
   function renderMoments() {
     renderLinks(comments.querySelectorAll(
       '.tk-comments-container > .tk-comment.tk-master > .tk-main > .tk-content a[href]'
-    ), true);
+    ), true, parseEmbed);
   }
 
   renderMoments();
