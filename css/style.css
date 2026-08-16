@@ -34,7 +34,7 @@ body {
 
 /* Optional page grid: delete this block to restore the plain white background. */
 body {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 0, 0, 0.02) 1px, transparent 1px);
   background-size: 24px 24px;
 }
 
@@ -1803,32 +1803,33 @@ em.search-keyword {
   overflow: visible;
 }
 
-.moments-embed {
+.media-embed {
+  display: block;
   margin: 0.75rem 0;
   width: 100%;
 }
 
-.moments-embed iframe {
+.media-embed iframe {
   display: block;
   width: 100%;
   border: 0;
 }
 
-.moments-embed--bilibili,
-.moments-embed--youtube {
+.media-embed--bilibili,
+.media-embed--youtube {
   max-width: 720px;
   aspect-ratio: 16/9;
 }
 
-.moments-embed--bilibili iframe,
-.moments-embed--youtube iframe {
+.media-embed--bilibili iframe,
+.media-embed--youtube iframe {
   height: 100%;
 }
 
-.moments-embed--netease {
+.media-embed--netease {
   max-width: 330px;
 }
 
-.moments-embed--netease iframe {
+.media-embed--netease iframe {
   height: 86px;
 }
