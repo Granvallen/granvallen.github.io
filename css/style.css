@@ -32,6 +32,16 @@ body {
   font-size: 14px;
 }
 
+::selection {
+  background: #000;
+  color: #fff;
+}
+
+::-moz-selection {
+  background: #000;
+  color: #fff;
+}
+
 /* Optional page grid: delete this block to restore the plain white background. */
 body {
   background-image: linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 0, 0, 0.02) 1px, transparent 1px);
