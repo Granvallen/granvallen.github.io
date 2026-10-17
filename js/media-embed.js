@@ -144,18 +144,15 @@
 
   renderLinks(document.querySelectorAll('.post-content a[href]'), false, parseNetEaseEmbed);
 
-  var comments = document.querySelector('.moments-comments');
-  if (!comments) return;
+  Array.prototype.forEach.call(document.querySelectorAll('.twikoo-comments'), function (comments) {
+    function renderComments() {
+      renderLinks(comments.querySelectorAll('.tk-content a[href]'), true, parseEmbed);
+    }
 
-  function renderMoments() {
-    renderLinks(comments.querySelectorAll(
-      '.tk-comments-container > .tk-comment.tk-master > .tk-main > .tk-content a[href]'
-    ), true, parseEmbed);
-  }
-
-  renderMoments();
-  new MutationObserver(renderMoments).observe(comments, {
-    childList: true,
-    subtree: true
+    renderComments();
+    new MutationObserver(renderComments).observe(comments, {
+      childList: true,
+      subtree: true
+    });
   });
 })();
