@@ -1813,6 +1813,10 @@ em.search-keyword {
   overflow: visible;
 }
 
+.twikoo-comments .tk-content {
+  line-height: 1.75;
+}
+
 .media-embed {
   display: block;
   margin: 0.75rem 0;
