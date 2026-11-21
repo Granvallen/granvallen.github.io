@@ -181,9 +181,10 @@ div {
 #sidebar .widget .search-form {
   position: relative;
   overflow: hidden;
+  --search-icon: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAANCAYAAABy6%2BR8AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAG11AABzoAAA%2FN0AAINkAABw6AAA7GgAADA%2BAAAQkOTsmeoAAAESSURBVHjajNCxS9VRGMbxz71E4OwgoXPQxVEpXCI47%2BZqGP0LCoJO7UVD3QZzb3SwcHB7F3Uw3Zpd%2FAPCcJKG7Dj4u%2FK7Pwp94HDg5Xyf5z1Pr9YKImKANTzFXxzjU2ae6qhXaxURr%2FAFl9hHDy%2FwEK8z89sYVEp5gh84wMvMvGiSJ%2FEV85jNzLMR1McqfmN5BEBmnmMJFSvtpH7jdJiZv7q7Z%2BZPfMdcF6rN%2FT%2F1m2LGBkd4HhFT3dcRMY2FpskxaLNpayciHrWAGeziD7b%2BVfkithuTk8bkGa4wgWFmbrSTZOYeBvjc%2BucQj%2FEe6xHx4Taq1nrnKaW8K6XUUsrHWuvNevdRRLzFGwzvDbXAB9cDAHvhedDruuxSAAAAAElFTkSuQmCC);
 }
 #sidebar .widget .search-form input {
-  background: #fff 8px 8px no-repeat url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAANCAYAAABy6%2BR8AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAG11AABzoAAA%2FN0AAINkAABw6AAA7GgAADA%2BAAAQkOTsmeoAAAESSURBVHjajNCxS9VRGMbxz71E4OwgoXPQxVEpXCI47%2BZqGP0LCoJO7UVD3QZzb3SwcHB7F3Uw3Zpd%2FAPCcJKG7Dj4u%2FK7Pwp94HDg5Xyf5z1Pr9YKImKANTzFXxzjU2ae6qhXaxURr%2FAFl9hHDy%2FwEK8z89sYVEp5gh84wMvMvGiSJ%2FEV85jNzLMR1McqfmN5BEBmnmMJFSvtpH7jdJiZv7q7Z%2BZPfMdcF6rN%2FT%2F1m2LGBkd4HhFT3dcRMY2FpskxaLNpayciHrWAGeziD7b%2BVfkithuTk8bkGa4wgWFmbrSTZOYeBvjc%2BucQj%2FEe6xHx4Taq1nrnKaW8K6XUUsrHWuvNevdRRLzFGwzvDbXAB9cDAHvhedDruuxSAAAAAElFTkSuQmCC);
+  background: #fff 8px 8px no-repeat var(--search-icon);
   padding: 7px 11px 7px 28px;
   line-height: 16px;
   border: 1px solid #bbb;
@@ -1083,13 +1084,13 @@ figure.highlight .line,
 }
 
 .highlight .comment {
-  color: #969896;
+  color: var(--syntax-comment, #969896);
 }
 .highlight .string {
-  color: #183691;
+  color: var(--syntax-string, #183691);
 }
 .highlight .keyword {
-  color: #a71d5d;
+  color: var(--syntax-keyword, #a71d5d);
 }
 .highlight.apacheconf .code .common,
 .highlight.apacheconf .code .nomarkup,
@@ -1097,197 +1098,197 @@ figure.highlight .line,
 .highlight.apacheconf .code .variable,
 .highlight.apacheconf .code .cbracket,
 .highlight.apacheconf .code .keyword {
-  color: #0086b3;
+  color: var(--syntax-number, #0086b3);
 }
 .highlight.apacheconf .code .sqbracket {
-  color: #df5000;
+  color: var(--syntax-escape, #df5000);
 }
 .highlight.apacheconf .code .section,
 .highlight.apacheconf .code .tag {
-  color: #63a35c;
+  color: var(--syntax-tag, #63a35c);
 }
 .highlight.bash .code .shebang {
-  color: #969896;
+  color: var(--syntax-comment, #969896);
 }
 .highlight.bash .code .literal,
 .highlight.bash .code .built_in {
-  color: #0086b3;
+  color: var(--syntax-number, #0086b3);
 }
 .highlight.bash .code .variable {
-  color: #333;
+  color: var(--syntax-text, #333);
 }
 .highlight.bash .code .title {
-  color: #795da3;
+  color: var(--syntax-name, #795da3);
 }
 .highlight.coffeescript .code .title {
-  color: #795da3;
+  color: var(--syntax-name, #795da3);
 }
 .highlight.coffeescript .code .literal,
 .highlight.coffeescript .code .built_in,
 .highlight.coffeescript .code .number {
-  color: #0086b3;
+  color: var(--syntax-number, #0086b3);
 }
 .highlight.coffeescript .code .reserved,
 .highlight.coffeescript .code .attribute {
-  color: #1d3e81;
+  color: var(--syntax-attribute, #1d3e81);
 }
 .highlight.coffeescript .code .subst,
 .highlight.coffeescript .code .regexp,
 .highlight.coffeescript .code .attribute {
-  color: #df5000;
+  color: var(--syntax-escape, #df5000);
 }
 .highlight.cpp .code .preprocessor, .highlight.c .code .preprocessor {
-  color: #df5000;
+  color: var(--syntax-escape, #df5000);
 }
 .highlight.cpp .code .meta-keyword, .highlight.c .code .meta-keyword {
-  color: #a71d5d;
+  color: var(--syntax-keyword, #a71d5d);
 }
 .highlight.cpp .code .title, .highlight.c .code .title {
-  color: #795da3;
+  color: var(--syntax-name, #795da3);
 }
 .highlight.cpp .code .number,
 .highlight.cpp .code .built_in, .highlight.c .code .number,
 .highlight.c .code .built_in {
-  color: #0086b3;
+  color: var(--syntax-number, #0086b3);
 }
 .highlight.clj .code .builtin-name {
-  color: #df5000;
+  color: var(--syntax-escape, #df5000);
 }
 .highlight.clj .code .name {
-  color: #795da3;
+  color: var(--syntax-name, #795da3);
 }
 .highlight.clj .code .number {
-  color: #0086b3;
+  color: var(--syntax-number, #0086b3);
 }
 .highlight.cs .code .preprocessor,
 .highlight.cs .code .preprocessor .keyword {
-  color: #333;
+  color: var(--syntax-text, #333);
 }
 .highlight.cs .code .title {
-  color: #795da3;
+  color: var(--syntax-name, #795da3);
 }
 .highlight.cs .code .number,
 .highlight.cs .code .built_in {
-  color: #0086b3;
+  color: var(--syntax-number, #0086b3);
 }
 .highlight.cs .code .xmlDocTag,
 .highlight.cs .code .doctag {
-  color: #63a35c;
+  color: var(--syntax-tag, #63a35c);
 }
 .highlight.css .code .at_rule,
 .highlight.css .code .important,
 .highlight.css .code .meta {
-  color: #a71d5d;
+  color: var(--syntax-keyword, #a71d5d);
 }
 .highlight.css .code .attribute,
 .highlight.css .code .hexcolor,
 .highlight.css .code .number,
 .highlight.css .code .function {
-  color: #0086b3;
+  color: var(--syntax-number, #0086b3);
 }
 .highlight.css .code .attr_selector,
 .highlight.css .code .value {
-  color: #333;
+  color: var(--syntax-text, #333);
 }
 .highlight.css .code .id,
 .highlight.css .code .class,
 .highlight.css .code .pseudo,
 .highlight.css .code .selector-pseudo {
-  color: #795da3;
+  color: var(--syntax-name, #795da3);
 }
 .highlight.css .code .tag,
 .highlight.css .code .selector-tag {
-  color: #63a35c;
+  color: var(--syntax-tag, #63a35c);
 }
 .highlight.diff .code .chunk,
 .highlight.diff .code .meta {
-  color: #795da3;
+  color: var(--syntax-name, #795da3);
   font-weight: bold;
 }
 .highlight.diff .code .addition {
-  color: #55a532;
-  background-color: #eaffea;
+  color: var(--syntax-added, #55a532);
+  background-color: var(--syntax-added-bg, #eaffea);
 }
 .highlight.diff .code .deletion {
-  color: #bd2c00;
-  background-color: #ffecec;
+  color: var(--syntax-deleted, #bd2c00);
+  background-color: var(--syntax-deleted-bg, #ffecec);
 }
 .highlight.http .code .attribute,
 .highlight.http .code .attr {
-  color: #183691;
+  color: var(--syntax-string, #183691);
 }
 .highlight.http .code .literal {
-  color: #0086b3;
+  color: var(--syntax-number, #0086b3);
 }
 .highlight.http .code .request {
-  color: #a71d5d;
+  color: var(--syntax-keyword, #a71d5d);
 }
 .highlight.ini .code .title,
 .highlight.ini .code .section {
-  color: #795da3;
+  color: var(--syntax-name, #795da3);
 }
 .highlight.ini .code .setting,
 .highlight.ini .code .attr {
-  color: #a71d5d;
+  color: var(--syntax-keyword, #a71d5d);
 }
 .highlight.ini .code .value,
 .highlight.ini .code .keyword {
-  color: #333;
+  color: var(--syntax-text, #333);
 }
 .highlight.java .code .title {
-  color: #795da3;
+  color: var(--syntax-name, #795da3);
 }
 .highlight.java .code .javadoc {
-  color: #969896;
+  color: var(--syntax-comment, #969896);
 }
 .highlight.java .code .meta,
 .highlight.java .code .annotation,
 .highlight.java .code .javadoctag {
-  color: #a71d5d;
+  color: var(--syntax-keyword, #a71d5d);
 }
 .highlight.java .code .number {
-  color: #0086b3;
+  color: var(--syntax-number, #0086b3);
 }
 .highlight.java .code .params {
-  color: #1d3e81;
+  color: var(--syntax-attribute, #1d3e81);
 }
 .highlight.js .code .built_in,
 .highlight.js .code .title {
-  color: #795da3;
+  color: var(--syntax-name, #795da3);
 }
 .highlight.js .code .javadoc {
-  color: #969896;
+  color: var(--syntax-comment, #969896);
 }
 .highlight.js .code .tag,
 .highlight.js .code .javadoctag {
-  color: #a71d5d;
+  color: var(--syntax-keyword, #a71d5d);
 }
 .highlight.js .code .tag .title {
-  color: #333;
+  color: var(--syntax-text, #333);
 }
 .highlight.js .code .regexp {
-  color: #df5000;
+  color: var(--syntax-escape, #df5000);
 }
 .highlight.js .code .literal,
 .highlight.js .code .number {
-  color: #0086b3;
+  color: var(--syntax-number, #0086b3);
 }
 .highlight.json .code .attribute {
-  color: #183691;
+  color: var(--syntax-string, #183691);
 }
 .highlight.json .code .number,
 .highlight.json .code .literal {
-  color: #0086b3;
+  color: var(--syntax-number, #0086b3);
 }
 .highlight.mak .code .constant {
-  color: #333;
+  color: var(--syntax-text, #333);
 }
 .highlight.mak .code .title {
-  color: #795da3;
+  color: var(--syntax-name, #795da3);
 }
 .highlight.mak .code .keyword,
 .highlight.mak .code .meta-keyword {
-  color: #0086b3;
+  color: var(--syntax-number, #0086b3);
 }
 .highlight.md .code .value,
 .highlight.md .code .link_label,
@@ -1296,12 +1297,12 @@ figure.highlight .line,
 .highlight.md .code .blockquote,
 .highlight.md .code .quote,
 .highlight.md .code .section {
-  color: #183691;
+  color: var(--syntax-string, #183691);
 }
 .highlight.md .code .link_reference,
 .highlight.md .code .symbol,
 .highlight.md .code .code {
-  color: #0086b3;
+  color: var(--syntax-number, #0086b3);
 }
 .highlight.md .code .link_url,
 .highlight.md .code .link {
@@ -1309,125 +1310,125 @@ figure.highlight .line,
 }
 .highlight.nginx .code .title,
 .highlight.nginx .code .attribute {
-  color: #a71d5d;
+  color: var(--syntax-keyword, #a71d5d);
 }
 .highlight.nginx .code .built_in,
 .highlight.nginx .code .literal {
-  color: #0086b3;
+  color: var(--syntax-number, #0086b3);
 }
 .highlight.nginx .code .regexp {
-  color: #183691;
+  color: var(--syntax-string, #183691);
 }
 .highlight.nginx .code .variable {
-  color: #333;
+  color: var(--syntax-text, #333);
 }
 .highlight.objectivec .code .preprocessor,
 .highlight.objectivec .code .meta {
-  color: #a71d5d;
+  color: var(--syntax-keyword, #a71d5d);
 }
 .highlight.objectivec .code .preprocessor .title,
 .highlight.objectivec .code .meta .title {
-  color: #df5000;
+  color: var(--syntax-escape, #df5000);
 }
 .highlight.objectivec .code .meta-string {
-  color: #183691;
+  color: var(--syntax-string, #183691);
 }
 .highlight.objectivec .code .title {
-  color: #795da3;
+  color: var(--syntax-name, #795da3);
 }
 .highlight.objectivec .code .literal,
 .highlight.objectivec .code .number,
 .highlight.objectivec .code .built_in {
-  color: #0086b3;
+  color: var(--syntax-number, #0086b3);
 }
 .highlight.perl .code .sub {
-  color: #795da3;
+  color: var(--syntax-name, #795da3);
 }
 .highlight.perl .code .title {
-  color: #795da3;
+  color: var(--syntax-name, #795da3);
 }
 .highlight.perl .code .regexp {
-  color: #df5000;
+  color: var(--syntax-escape, #df5000);
 }
 .highlight.php .code .phpdoc,
 .highlight.php .code .doctag {
-  color: #a71d5d;
+  color: var(--syntax-keyword, #a71d5d);
 }
 .highlight.php .code .regexp {
-  color: #df5000;
+  color: var(--syntax-escape, #df5000);
 }
 .highlight.php .code .literal,
 .highlight.php .code .number {
-  color: #0086b3;
+  color: var(--syntax-number, #0086b3);
 }
 .highlight.php .code .title {
-  color: #795da3;
+  color: var(--syntax-name, #795da3);
 }
 .highlight.python .code .decorator,
 .highlight.python .code .title,
 .highlight.python .code .meta {
-  color: #795da3;
+  color: var(--syntax-name, #795da3);
 }
 .highlight.python .code .number {
-  color: #0086b3;
+  color: var(--syntax-number, #0086b3);
 }
 .highlight.ruby .code .parent,
 .highlight.ruby .code .title {
-  color: #795da3;
+  color: var(--syntax-name, #795da3);
 }
 .highlight.ruby .code .prompt,
 .highlight.ruby .code .constant,
 .highlight.ruby .code .number,
 .highlight.ruby .code .subst .keyword,
 .highlight.ruby .code .symbol {
-  color: #0086b3;
+  color: var(--syntax-number, #0086b3);
 }
 .highlight.sql .built_in {
-  color: #a71d5d;
+  color: var(--syntax-keyword, #a71d5d);
 }
 .highlight.sql .number {
-  color: #0086b3;
+  color: var(--syntax-number, #0086b3);
 }
 .highlight.xml .tag, .highlight.html .tag {
-  color: #333;
+  color: var(--syntax-text, #333);
 }
 .highlight.xml .value, .highlight.html .value {
-  color: #183691;
+  color: var(--syntax-string, #183691);
 }
 .highlight.xml .attribute,
 .highlight.xml .attr, .highlight.html .attribute,
 .highlight.html .attr {
-  color: #795da3;
+  color: var(--syntax-name, #795da3);
 }
 .highlight.xml .title,
 .highlight.xml .name, .highlight.html .title,
 .highlight.html .name {
-  color: #63a35c;
+  color: var(--syntax-tag, #63a35c);
 }
 .highlight.puppet .title {
-  color: #795da3;
+  color: var(--syntax-name, #795da3);
 }
 .highlight.puppet .function {
-  color: #0086b3;
+  color: var(--syntax-number, #0086b3);
 }
 .highlight.puppet .name {
-  color: #a71d5d;
+  color: var(--syntax-keyword, #a71d5d);
 }
 .highlight.puppet .attr {
-  color: #0086b3;
+  color: var(--syntax-number, #0086b3);
 }
 .highlight.less .tag,
 .highlight.less .at_rule {
-  color: #a71d5d;
+  color: var(--syntax-keyword, #a71d5d);
 }
 .highlight.less .number,
 .highlight.less .hexcolor,
 .highlight.less .function,
 .highlight.less .attribute {
-  color: #0086b3;
+  color: var(--syntax-number, #0086b3);
 }
 .highlight.less .built_in {
-  color: #df5000;
+  color: var(--syntax-escape, #df5000);
 }
 .highlight.less .id,
 .highlight.less .pseudo,
@@ -1435,30 +1436,30 @@ figure.highlight .line,
 .highlight.less .selector-id,
 .highlight.less .selector-class,
 .highlight.less .selector-tag {
-  color: #795da3;
+  color: var(--syntax-name, #795da3);
 }
 .highlight.lisp .code .name {
-  color: #df5000;
+  color: var(--syntax-escape, #df5000);
 }
 .highlight.lisp .code .number {
-  color: #0086b3;
+  color: var(--syntax-number, #0086b3);
 }
 .highlight.scss .tag,
 .highlight.scss .at_rule,
 .highlight.scss .important {
-  color: #a71d5d;
+  color: var(--syntax-keyword, #a71d5d);
 }
 .highlight.scss .number,
 .highlight.scss .hexcolor,
 .highlight.scss .function,
 .highlight.scss .attribute {
-  color: #0086b3;
+  color: var(--syntax-number, #0086b3);
 }
 .highlight.scss .variable {
-  color: #333;
+  color: var(--syntax-text, #333);
 }
 .highlight.scss .built_in {
-  color: #df5000;
+  color: var(--syntax-escape, #df5000);
 }
 .highlight.scss .id,
 .highlight.scss .pseudo,
@@ -1466,24 +1467,24 @@ figure.highlight .line,
 .highlight.scss .preprocessor,
 .highlight.scss .selector-class,
 .highlight.scss .selector-id {
-  color: #795da3;
+  color: var(--syntax-name, #795da3);
 }
 .highlight.scss .tag,
 .highlight.scss .selector-tag {
-  color: #63a35c;
+  color: var(--syntax-tag, #63a35c);
 }
 .highlight.stylus .at_rule {
-  color: #a71d5d;
+  color: var(--syntax-keyword, #a71d5d);
 }
 .highlight.stylus .tag,
 .highlight.stylus .selector-tag {
-  color: #63a35c;
+  color: var(--syntax-tag, #63a35c);
 }
 .highlight.stylus .number,
 .highlight.stylus .hexcolor,
 .highlight.stylus .attribute,
 .highlight.stylus .params {
-  color: #0086b3;
+  color: var(--syntax-number, #0086b3);
 }
 .highlight.stylus .class,
 .highlight.stylus .id,
@@ -1492,39 +1493,39 @@ figure.highlight .line,
 .highlight.stylus .selector-id,
 .highlight.stylus .selector-pseudo,
 .highlight.stylus .selector-class {
-  color: #795da3;
+  color: var(--syntax-name, #795da3);
 }
 .highlight.go .typename {
-  color: #a71d5d;
+  color: var(--syntax-keyword, #a71d5d);
 }
 .highlight.go .built_in,
 .highlight.go .constant {
-  color: #0086b3;
+  color: var(--syntax-number, #0086b3);
 }
 .highlight.swift .preprocessor {
-  color: #a71d5d;
+  color: var(--syntax-keyword, #a71d5d);
 }
 .highlight.swift .title {
-  color: #795da3;
+  color: var(--syntax-name, #795da3);
 }
 .highlight.swift .built_in,
 .highlight.swift .number,
 .highlight.swift .type {
-  color: #0086b3;
+  color: var(--syntax-number, #0086b3);
 }
 .highlight.yml .line,
 .highlight.yml .attr {
-  color: #63a35c;
+  color: var(--syntax-tag, #63a35c);
 }
 .highlight.yml .line,
 .highlight.yml .string,
 .highlight.yml .type,
 .highlight.yml .literal,
 .highlight.yml .meta {
-  color: #183691;
+  color: var(--syntax-string, #183691);
 }
 .highlight.yml .number {
-  color: #0086b3;
+  color: var(--syntax-number, #0086b3);
 }
 
 /* post navigator*/

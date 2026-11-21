@@ -65,9 +65,10 @@
       params = hashUrl.searchParams;
     }
 
-    var type = path === '/song' ? '2' : path === '/playlist' ? '0' : params.get('type');
+    var playerTypes = { '/song': '2', '/playlist': '0', '/program': '3' };
+    var type = playerTypes[path.replace(/^\/m\//, '/')] || params.get('type');
     var id = params.get('id');
-    if ((type !== '0' && type !== '2') || !/^\d+$/.test(id || '')) return null;
+    if (!/^[023]$/.test(type || '') || !/^\d+$/.test(id || '')) return null;
 
     var playerPath = isMobileBrowser() ? '/m/outchain/player' : '/outchain/player';
     var embed = new URL('https://music.163.com' + playerPath);
